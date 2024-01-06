@@ -151,6 +151,10 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Random keygen was used to create the Secret Key which kept registered users details secure.
 1. [Materialize 1.0.0:](https://materializecss.com/)
    - Materialize was used to assist with the responsiveness and styling of the website.
+1. [JQuery:](https://releases.jquery.com/)
+   - jQuery was used in conjunction with Materialize.
+1. [CDNjs:](https://cdnjs.com/)
+   - CDNjs was used to find the Font Awesome CDN.
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
