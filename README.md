@@ -147,8 +147,10 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Balsamiq was used to create the [wireframes](https://balsamiq.com/) during the design process
 1. [Flask:](https://palletsprojects.com/p/flask/)
    - Flask was used to create the Python web framework.
+1. [Random Keygen:](https://randomkeygen.com/)
+   - Random keygen was used to create the Secret Key which kept registered users details secure.
 1. [Materialize 1.0.0:](https://materializecss.com/)
-   - Bootstrap was used to assist with the responsiveness and styling of the website.
+   - Materialize was used to assist with the responsiveness and styling of the website.
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
