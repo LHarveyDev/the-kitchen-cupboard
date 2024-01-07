@@ -5,3 +5,14 @@
 .flashes h4 {
     line-height: 2;
 }
+
+body {
+    background-image: url('/static/images/food.jpg');
+    background-size: cover;
+}
+
+.welcome {
+    position: relative;
+    text-align: center;
+    color: white;
+}
