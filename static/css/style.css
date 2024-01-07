@@ -13,13 +13,23 @@ body {
     background-color: #c0ca33;
 }
 
-.welcome {
+.text-home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    color: white;
+}
+
+.text-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: auto;
     color: white;
 }
 
