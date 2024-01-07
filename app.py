@@ -23,6 +23,11 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/search", methods=["POST"]) )
+def search():
+    return render_template("search.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

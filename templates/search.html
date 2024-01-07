@@ -3,11 +3,37 @@
 
 <h1>The Kitchen Cupboard</h1>
 <p>Delve into the Kitchen Cupboard to find a new recipe to try. You can search by name, cuisine or level of difficulty</p>
+
     <div class="row">
-    <div class="input-field col s12">
-      <input id="keyword" name="keyword" type="text">
-      <label for="keyword">Search</label>
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('search') }}">
+            <div class="card-panel">
+
+                <!-- search -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-magnifying-glass prefix"></i>
+						<input id="search" name="search" type="text" validated>
+						<label for="search">Search by keyword</label>
+					</div>
+                </div>
+
+                <!-- submit -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
+                        Search <i class="fas fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-  </div>
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                New Here?
+                <a href="{{ url_for('register') }}" class="text-darken-4">Register Account</a>
+            </p>
+        </div>
+    </div>
 
 {% endblock %}

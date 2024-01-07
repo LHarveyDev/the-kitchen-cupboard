@@ -269,8 +269,10 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 |  SECRET_KEY   |     |
 
 Actual Enviroment variables not disclosed for security
+
 ## Credits
-List of used resources for your website (text, images, snippets of code, projects....), add links and description
+- How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
+
 ## Acknowledgment
 Mention people who helped you with your project(mentor, colleagues...)
 
