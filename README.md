@@ -112,19 +112,17 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - #### Colour Scheme
     - I chose the colours to create a fresh, vibrant feel to users. I used [Coolers](https://coolors.co/93032e-c69f89-a6a15e-84894a-034c3c) to select a complimentary colour palette ![colour palette](/documentation/coolers.png "Colour Palette")
   - #### Typography
-    - The Ubuntu font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Ubuntu is an informal, friendly font that conveys a welcoming image but is also easy to read and has clean lines.
   - #### Imagery
     - Imagery is important. The large background image is designed to be striking and catch the user's attention. It creates a uniformity that links all the pages together. Photo by Lukas</a> on <a href="https://www.pexels.com/photo/variety-of-vegetables-616401/">Pexels</a>
 
 * ### Wireframes & Flowcharts
 
   - User Flowchart - [View](/documentation/the_kitchen_cupboard.png)
-  - Home Page Wireframe - [View](/documentation/home.pdf)
-  - Register Page Wireframe - [View](/documentation/register.pdf)
-  - Sign In Page Wireframe - [View](/documentation/signin.pdf)
-  - Sign Out Page Wireframe - [View](/documentation/signout.pdf)
-  - Search Page Wireframe - [View](/documentation/search.pdf)
-  - Search Results Page Wireframe - [View](/documentation/results.pdf)
+  - Home Page Wireframe - [View](/documentation/kitchen_home.png)
+  - Register Page Wireframe - [View](/documentation/kitchen_register.png)
+  - Sign In Page Wireframe - [View](/documentation/kitchen_signin.png)
+  - Search Page Wireframe - [View](/documentation/kitchen_search.png)
+  - Search Results Page Wireframe - [View](/documentation/kitchen_results.png)
   - Add/Edit Page Wireframe - [View](/documentation/edit.pdf)
 
 ## Features
