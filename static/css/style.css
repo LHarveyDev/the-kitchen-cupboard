@@ -23,7 +23,7 @@ body {
     color: white;
 }
 
-.text-search {
+.text-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
