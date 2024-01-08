@@ -5,14 +5,14 @@
 <p>Delve into the Kitchen Cupboard to find a new recipe to try. You can search by name, cuisine or level of difficulty</p>
 </div>
     <div class="row">
-        <form class="col s12 m8 offset-m2">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel">
 
                 <!-- search -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-magnifying-glass prefix"></i>
-						<input id="query" name="query" type="text" validate>
+						<input id="query" name="query" type="text" class="validate" required>
 						<label for="query">Search by keyword</label>
 					</div>
                 </div>
@@ -35,5 +35,19 @@
             </p>
         </div>
     </div>
+
+    {% if results %}
+    <h1>Search Results for '{{ query }}'</h1>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.image }}</li>
+            <li>{{ result.difficulty }}</li>
+            <li>{{ result.name }}</li>
+            <li>{{ result.ingredients }}</li>
+            <li>{{ result.method }}</li>
+            <!-- Display other fields or customize based on your document structure -->
+        {% endfor %}
+    </ul>
+{% endif %}
 
 {% endblock %}

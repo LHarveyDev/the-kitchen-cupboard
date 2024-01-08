@@ -24,9 +24,11 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/search")
+@app.route("/search", methods=["GET", "POST"])
 def search():
-    return render_template("search.html")
+    query = request.form.get("query")
+    results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("search.html", results=results, query=query)
 
 
 @app.route("/register", methods=["GET", "POST"])
