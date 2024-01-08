@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="text-box">
+<p>Add your own recipe using the form below</p>
+</div>
+    <div class="row">
+        <form class="col s12 m8 offset-m2">
+            <div class="card-panel">
+
+                <!-- image -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-image prefix"></i>
+						<input id="recipe_image" name="recipe_image" type="text" validate>
+						<label for="recipe_image">Upload Image</label>
+					</div>
+                </div>
+                <!-- recipe name -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-utensils prefix"></i>
+						<input id="recipe_name" name="recipe_name" type="text" validate>
+						<label for="recipe_name">Recipe Name</label>
+					</div>
+                </div>
+                <!-- recipe ingredients -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-carrot prefix"></i>
+						<textarea id="recipe_ingedients" class="textarea"></textarea>
+						<label class="active" for="recipe_ingedients">Ingredients</label>
+					</div>
+                </div>
+                <!-- recipe method -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-list-ol prefix"></i>
+						<textarea id="recipe_method" class="textarea"></textarea>
+						<label class="active" for="recipe_method">Method</label>
+					</div>
+                </div>
+
+                <!-- submit -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
+                        Submit <i class="fas fa-right-to-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

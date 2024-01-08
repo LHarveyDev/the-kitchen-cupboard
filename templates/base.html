@@ -25,7 +25,7 @@
                             <li><a href="{{ url_for('search') }}">Search</a></li>
                             {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                            <li><a href="#">Add Recipe</a></li>
+                            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                             <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
                             {% else %}
                             <li><a href="{{ url_for('signin') }}">Sign In</a></li>
@@ -44,7 +44,7 @@
                     <li><a href="{{ url_for('search') }}">Search</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="#">Add Recipe</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                     <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('signin') }}">Sign In</a></li>
