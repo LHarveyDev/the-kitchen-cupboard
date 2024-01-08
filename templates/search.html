@@ -38,16 +38,29 @@
 
     {% if results %}
     <h1>Search Results for '{{ query }}'</h1>
-    <ul>
-        {% for result in results %}
-            <li>{{ result.image }}</li>
-            <li>{{ result.difficulty }}</li>
-            <li>{{ result.name }}</li>
-            <li>{{ result.ingredients }}</li>
-            <li>{{ result.method }}</li>
-            <!-- Display other fields or customize based on your document structure -->
-        {% endfor %}
-    </ul>
+    {% for result in results %}
+    <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ result.image }}">
+            </div>
+            <div class="card-name">
+              <h3>{{ result.name }}</h3>
+            </div>
+            <div class="card-difficulty">
+              <p>{{ result.difficulty }}</p>
+            </div>
+            <div class="card-ingredients">
+              <p>{{ result.ingredients }}</p>
+            </div>
+            <div class="card-method">
+              <p>{{ result.method }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
 {% endif %}
 
 {% endblock %}
