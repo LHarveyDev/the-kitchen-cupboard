@@ -118,8 +118,8 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("add_recipe"))
 
-    categories = mongo.db.categories.find().sort("name", 1)
-    return render_template("add_recipe.html", categories=categories)
+    categories = mongo.db.recipes.find().sort("name", 1)
+    return render_template("add_recipe.html", recipes=recipes)
 
 
 if __name__ == "__main__":
