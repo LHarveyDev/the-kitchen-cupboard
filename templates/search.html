@@ -52,14 +52,24 @@
               <p>{{ result.difficulty }}</p>
             </div>
             <div class="card-ingredients">
-              <p>{{ result.ingredients }}</p>
+                <h5>Ingredients:</h5>
+                <ul>
+                    {% for ingredient in result.ingredients.split(';') %}
+                        <li>{{ ingredient.strip() }}</li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="card-method">
-              <p>{{ result.method }}</p>
+                <h5>Method:</h5>
+                <ul>
+                    {% for step in result.method.split(';') %}
+                        <li>{{ step.strip() }}</li>
+                    {% endfor %}
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
     {% endfor %}
 {% endif %}
 
