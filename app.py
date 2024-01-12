@@ -1,4 +1,5 @@
 import os
+import cloudinary
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -10,6 +11,11 @@ if os.path.exists("env.py"):
 
 
 app = Flask(__name__)
+cloudinary.config(
+  cloud_name="dta1weyk5",
+  api_key="823595915576454",
+  api_secret="***************************"
+)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
