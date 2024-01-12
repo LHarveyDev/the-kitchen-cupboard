@@ -27,7 +27,11 @@ def home():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    results = []
+
+    if query:
+        results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
     return render_template("search.html", results=results, query=query)
 
 
