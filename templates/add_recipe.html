@@ -5,17 +5,17 @@
 <p>Add your own recipe using the form below</p>
 </div>
     <div class="row">
-        <form class="col s12 m8 offset-m2">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
             <div class="card-panel">
 
-                <!-- image -->
+                <!-- image
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-image prefix"></i>
 						<input id="recipe_image" name="recipe_image" type="text" validate>
 						<label for="recipe_image">Upload Image</label>
 					</div>
-                </div>
+                </div> -->
                 <!-- recipe name -->
                 <div class="row">
 					<div class="input-field col s12">

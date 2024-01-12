@@ -3,7 +3,13 @@
 }
 
 .flashes h4 {
-    line-height: 2;
+    line-height: 1;
+    background-color: grey;
+}
+
+h2 {
+    color: white;
+    text-align: center;
 }
 
 body {
