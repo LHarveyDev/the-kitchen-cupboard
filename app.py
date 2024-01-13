@@ -29,8 +29,11 @@ def search():
     query = request.form.get("query")
     results = []
 
-    if query:
+    if request.method == "POST" and query:
         results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
+    if not results and query:
+        flash("No results found for '{}' Please try another search".format(query))
 
     return render_template("search.html", results=results, query=query)
 
@@ -108,12 +111,20 @@ def signout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        recipe_name = request.form.get("recipe_name")
+        recipe_ingredients = request.form.get("recipe_ingredients")
+        recipe_method = request.form.get("recipe_method")
+
+        # Add semi-colon to the end of each line
+        recipe_ingredients = ';'.join(recipe_ingredients.split('\n'))
+        recipe_method = ';'.join(recipe_method.split('\n'))
+
         recipe = {
-            "name": request.form.get("name"),
-            "difficulty": request.form.get("difficulty"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "name": recipe_name,
+            "ingredients": recipe_ingredients,
+            "method": recipe_method,
         }
+
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("add_recipe"))
