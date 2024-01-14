@@ -70,7 +70,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
     * [Navigation](#Navigation-bar)
     * [Footer](#footer)
     * [Home page](#home-page)
-    * [add your pages](#)
+    * [Register page](#register-page)
    
 
 3. [Technologies Used](#technologies-used)

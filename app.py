@@ -46,7 +46,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Email already exists")
+            flash("User already exists")
             return redirect(url_for("register"))
 
         register = {
@@ -77,12 +77,12 @@ def signin():
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Email Address and/or Password")
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("signin"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Email Address and/or Password")
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("signin"))
 
     return render_template("signin.html")
@@ -123,6 +123,7 @@ def add_recipe():
             "name": recipe_name,
             "ingredients": recipe_ingredients,
             "method": recipe_method,
+            "created_by": session["user"]
         }
 
         mongo.db.recipes.insert_one(recipe)
