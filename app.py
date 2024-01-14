@@ -88,16 +88,25 @@ def signin():
     return render_template("signin.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+@app.route("/profile")
+def profile():
+    # Check if the user is authenticated
+    if 'user' not in session:
+        return redirect(url_for("signin"))
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    # Retrieve the user's information and recipes from the database
+    username = session['user']
+    user = mongo.db.users.find_one({"username": username})
+    
+    # Check if the user exists in the database
+    if not user:
+        flash("User not found")
+        return redirect(url_for("signin"))
 
-    return redirect(url_for("signin"))
+    # Retrieve recipes created by the user
+    recipes = mongo.db.recipes.find({'created_by': username})
+
+    return render_template("profile.html", username=username, user=user, recipes=recipes)
 
 
 @app.route("/signout")
