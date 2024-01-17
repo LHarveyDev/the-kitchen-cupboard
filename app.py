@@ -33,7 +33,8 @@ def search():
         results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
     if not results and query:
-        flash("No results found for '{}' Please try another search".format(query))
+        flash("No results found for '{}' Please try another search".format(
+            query))
 
     return render_template("search.html", results=results, query=query)
 
@@ -97,7 +98,7 @@ def profile():
     # Retrieve the user's information and recipes from the database
     username = session['user']
     user = mongo.db.users.find_one({"username": username})
-    
+
     # Check if the user exists in the database
     if not user:
         flash("User not found")
@@ -106,7 +107,8 @@ def profile():
     # Retrieve recipes created by the user
     recipes = mongo.db.recipes.find({'created_by': username})
 
-    return render_template("profile.html", username=username, user=user, recipes=recipes)
+    return render_template(
+        "profile.html", username=username, user=user, recipes=recipes)
 
 
 @app.route("/signout")
