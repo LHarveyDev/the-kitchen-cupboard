@@ -16,8 +16,8 @@
                         <li>{{ recipe.method }}</li>
                         <li>{{ recipe.created_by }}</li>
                         <div class="s3">
-                            <a href="" class="btn-small red accent-4 fas fa-trash prefix">Delete</a>
-                            <a href="" class="btn-small light-blue lighten-1 fas fa-pen-to-square prefix">Edit</a>
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1 fas fa-pen-to-square prefix">Edit</a>
+                            <a href="" class="btn-small red accent-4 fas fa-trash prefix">Delete</a>  
                         </div>
                     {% endfor %}
                 </ul>
