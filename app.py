@@ -18,20 +18,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Function runs when users navigate to Home using NavBar
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
 
+# Function to allow users to search database using keyword
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     results = []
-
+# If any results are found then return as a list
     if request.method == "POST" and query:
         results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-
+# If no results are found display flash message and reload search page
     if not results and query:
         flash("No results found for '{}' Please try another search".format(
             query))
@@ -39,6 +41,7 @@ def search():
     return render_template("search.html", results=results, query=query)
 
 
+# Function to allow new users to register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -62,6 +65,7 @@ def register():
     return render_template("register.html")
 
 
+# Function to allow registered users to sign in
 @app.route("/signin", methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -89,6 +93,7 @@ def signin():
     return render_template("signin.html")
 
 
+# Function displays the logged in users profile
 @app.route("/profile")
 def profile():
     # Check if the user is authenticated
@@ -111,6 +116,7 @@ def profile():
         "profile.html", username=username, user=user, recipes=recipes)
 
 
+# Function to allow logged in users to logout
 @app.route("/signout")
 def signout():
     # remove user from session cookie
@@ -119,6 +125,7 @@ def signout():
     return redirect(url_for("signin"))
 
 
+# Function to allow registered users to add their own recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -126,7 +133,8 @@ def add_recipe():
         recipe_ingredients = request.form.get("recipe_ingredients")
         recipe_method = request.form.get("recipe_method")
 
-        # Add semi-colon to the end of each line
+        # Add semi-colon to the end of each line to ensure items
+        # are displayed correctly on individual lines
         recipe_ingredients = ';'.join(recipe_ingredients.split('\n'))
         recipe_method = ';'.join(recipe_method.split('\n'))
 
@@ -145,6 +153,7 @@ def add_recipe():
     return render_template("add_recipe.html", recipes=recipes)
 
 
+# Function to allow registered users to edit their own recipes
 @app.route("/edit_recipe/<recipe_id>)", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -170,6 +179,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
+# Function to allow registered users to delete their own recipes
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
