@@ -1,6 +1,8 @@
 {% extends "base.html" %} 
 {% block content %}
 
+<!-- Page to allow logged in users to add their own recipes -->
+
 <div class="text-box">
 <p>Add your own recipe using the form below</p>
 </div>
@@ -16,7 +18,7 @@
 						<label for="recipe_image">Upload Image</label>
 					</div>
                 </div> -->
-                <!-- recipe name -->
+                <!-- recipe name input field -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-utensils prefix"></i>
@@ -24,7 +26,7 @@
 						<label for="recipe_name">Recipe Name</label>
 					</div>
                 </div>
-                <!-- recipe ingredients -->
+                <!-- recipe ingredients input field -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-carrot prefix"></i>
@@ -32,7 +34,7 @@
 						<label class="active" for="recipe_ingredients">Ingredients</label>
 					</div>
                 </div>
-                <!-- recipe method -->
+                <!-- recipe method input field -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-list-ol prefix"></i>
@@ -41,7 +43,7 @@
 					</div>
                 </div>
 
-                <!-- submit -->
+                <!-- submit button -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
                         Submit <i class="fas fa-right-to-bracket"></i>

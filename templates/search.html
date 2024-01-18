@@ -1,6 +1,8 @@
 {% extends "base.html" %} 
 {% block content %}
 
+<!-- Search page text and intructions on search terms to use-->
+
 {% if not results %}
 <div class="text-box">
     <p>Delve into the Kitchen Cupboard to find a new recipe to try. You can search by name or ingredient.</p>
@@ -29,6 +31,8 @@
         </form>
     </div>
 {% endif %}
+
+<!-- Search results display -->
 
 {% if results %}
     <h2>Search Results for '{{ query }}'</h2>
@@ -69,7 +73,7 @@
         </div>
     {% endfor %}
 {% endif %}
-
+<!-- Redirect to register page if no results found -->
 {% if not results %}
     <div class="row">
         <div class="col s12">

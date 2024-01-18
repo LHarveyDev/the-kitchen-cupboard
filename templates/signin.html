@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Sign in page for registered users -->
+
 <div class="text-box">
     <h3 class="center-align">Sign In</h3>
 </div>
@@ -8,7 +10,7 @@
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signin') }}">
         <div class="card-panel">
-            <!-- username -->
+            <!-- username input field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user prefix"></i>
@@ -17,7 +19,7 @@
                     <label for="username">Username</label>
                 </div>
             </div>
-            <!-- password -->
+            <!-- password input field -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-lock prefix"></i>
@@ -25,7 +27,7 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!-- sign in -->
+            <!-- sign in button -->
             <div class="row">
                 <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
                     Sign In <i class="fas fa-sign-in-alt"></i>
@@ -34,7 +36,7 @@
         </div>
     </form>
 </div>
-
+<!-- Redirect for those not already registered to the register page -->
 <div class="row">
     <div class="col s12">
         <p class="center-align">
