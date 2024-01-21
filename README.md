@@ -168,8 +168,8 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Favicon.io was used to create the icon on the web page tab.
 1. [I Love IMG:](https://www.iloveimg.com/resize-image)
    - I Love IMG used to crop and resize all images to enhance performance and increase Lighthouse scores during testing.
-1. [Git](https://git-scm.com/)
-   - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [Codeanywhere](https://codeanywhere.com/signin)
+   - Codeanywhere was used for version control by utilizing the Codeanywhere terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
    - GitHub was used to store the projects code after being pushed from Git.
 1. [Heroku:](https://heroku.com/)
@@ -182,7 +182,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)
 
 ## Testing
-Important part of your README!!!
+
 ### Google's Lighthouse Performance
 Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
@@ -217,7 +217,7 @@ This website is deployed to Heroku from a GitHub repository, the following steps
 - Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Codeanywhere](https://app.codeanywhere.com/)and clicked on **New Workspace** to create a workspace in codeanywhere so that I could write the code for the site.
   
 #### Making a Local Clone
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LHarveyDev/homes-for-hounds.git)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LHarveyDev/the-kitchen-cupboard)
 2. Under the repository name, click "Clone or download".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
@@ -225,13 +225,13 @@ This website is deployed to Heroku from a GitHub repository, the following steps
 6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/LHarveyDev/the-kitchen-cupboard
 ```
 
 7. Press Enter. Your local clone will be created.
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/LHarveyDev/the-kitchen-cupboard
 > Cloning into `CI-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
