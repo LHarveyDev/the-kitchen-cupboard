@@ -96,9 +96,10 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 
   - #### Returning Visitor Goals
 
-    1. As a Returning Visitor, I want to log in and add a recipe.
+    1. As a Returning Visitor, I want to log in and view my profile.
     2. As a Returning Visitor, I want to search for a new recipe to make.
-    3. As a Returning Visitor, I want to check if there are any social media updates.
+    3. As a Returning Visitor, I want to log in and add my own recipes.
+    4. As a Returning Visitor, I want to check if there are any social media updates.
 
   - #### Frequent User Goals
 
