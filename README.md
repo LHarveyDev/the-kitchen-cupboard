@@ -144,6 +144,8 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Lucidchart was used to create the [flowcharts](https://lucidchart.com/) during the design process
 1. [Balsamiq:](https://balsamiq.com/)
    - Balsamiq was used to create the [wireframes](https://balsamiq.com/) during the design process
+1. [dbdiagram:](https://dbdiagram.io)
+   - Balsamiq was used to create the [database schema](https://dbdiagram.io) during the design process
 1. [Flask:](https://palletsprojects.com/p/flask/)
    - Flask was used to create the Python web framework.
 1. [Random Keygen:](https://randomkeygen.com/)
@@ -174,7 +176,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Heroku was used to deploy my project.
 
 ### DataBase Diagram
-  - User Flowchart - [View](/documentation/the_kitchen_cupboard.png)
+  - Database Schema - [View](/documentation/database_schema.png)
 
 ## Features:
 Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)

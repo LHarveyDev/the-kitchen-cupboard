@@ -7,6 +7,10 @@
     background-color: #c0ca33;
 }
 
+h1 {
+    font-weight: 600;
+}
+
 h2 {
     color: white;
     text-align: center;
@@ -41,4 +45,30 @@ body {
 
 .brand-text {
     font-size: 1.5rem;
+}
+
+/* Social Networks*/
+
+.footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-networks {
+    text-align: center;
+    list-style: none;
+}
+
+.social-networks li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 200%;
+    margin: 5px;
+    padding: 2%;
+    color: white;
 }
