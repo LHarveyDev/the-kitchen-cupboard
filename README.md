@@ -272,8 +272,13 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 Actual Enviroment variables not disclosed for security
 
 ## Credits
+
+- Code Institute's Task Manager project walkthrough. Used to create the user authentication function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
+- Code Institute's Task Manager project walkthrough. Used to create the search function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
 
-## Acknowledgment
-Mention people who helped you with your project(mentor, colleagues...)
+### Acknowledgements
+
+- My Mentor for continuous helpful feedback.
+- Tutor support at Code Institute for their support.
 
