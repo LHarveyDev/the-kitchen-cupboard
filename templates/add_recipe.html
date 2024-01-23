@@ -7,7 +7,7 @@
 <p>Add your own recipe using the form below</p>
 </div>
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
             <div class="card-panel">
 
                 <!-- image -->
@@ -15,7 +15,7 @@
                     <div class="file-field input-field col s12">
                         <div class="btn">
                           <span>Upload Image</span>
-                          <input type="file">
+                          <input type="file" name="recipe_image">
                         </div>
                         <div class="file-path-wrapper">
                           <input class="file-path validate" type="text">

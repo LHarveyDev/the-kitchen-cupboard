@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
     import env
 
@@ -14,6 +15,9 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+UPLOAD_FOLDER = 'static/images/user_images'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 mongo = PyMongo(app)
 
@@ -129,10 +133,59 @@ def signout():
     return redirect(url_for("signin"))
 
 
+@app.route("/upload", methods=["POST"])
+def upload_file():
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+
+    file = request.files['file']
+
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+
+    if file:
+        try:
+            # Ensure a secure filename to prevent security vulnerabilities
+            filename = secure_filename(file.filename)
+
+            # Save the file to the specified upload folder
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+            # You can store the filename or file path in MongoDB if needed
+            # Example MongoDB insert code:
+            # image_url = 'your_base_url' + '/' + filename
+            # mongo.db.images.insert_one({'url': image_url})
+
+            # Continue with the rest of your code
+            return redirect(url_for("profile"))
+
+        except Exception as e:
+            # Handle exceptions (e.g., file save failure)
+            flash('Error uploading file: {}'.format(str(e)))
+            return redirect(request.url)
+
+
 # Function to allow registered users to add their own recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        # Check if the post request has the image upload
+        if 'recipe_image' in request.files:
+            file = request.files['recipe_image']
+            # Handle file upload and save image URL to MongoDB
+            try:
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            except Exception as e:
+                flash('Error uploading file: {}'.format(str(e)))
+                return redirect(request.url)
+        else:
+            # Handle case where no file is uploaded
+            image_url = None
+
         recipe_name = request.form.get("recipe_name")
         recipe_ingredients = request.form.get("recipe_ingredients")
         recipe_method = request.form.get("recipe_method")
@@ -143,6 +196,7 @@ def add_recipe():
         recipe_method = ';'.join(recipe_method.split('\n'))
 
         recipe = {
+            "image": image_url,
             "name": recipe_name,
             "ingredients": recipe_ingredients,
             "method": recipe_method,
