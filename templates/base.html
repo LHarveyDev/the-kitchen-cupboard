@@ -23,7 +23,7 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow lime darken-1">
+        <nav class="nav-extended text-shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-text">The Kitchen Cupboard</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -45,7 +45,7 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <h4 class="center-align lime darken-1">The Kitchen Cupboard</h4>
+                <h4 class="center-align">The Kitchen Cupboard</h4>
             </li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('search') }}">Search</a></li>
@@ -88,6 +88,7 @@
             <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
+        <p>Website created for educational purposes only</p> 
     </footer>
 
     <!-- jquery and Materialize scripts -->

@@ -111,7 +111,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 - ### Design
 
   - #### Colour Scheme
-    - I chose the colours to create a fresh, vibrant feel to users. I used [Coolers](https://coolors.co/93032e-c69f89-a6a15e-84894a-034c3c) to select a complimentary colour palette ![colour palette](/documentation/coolers.png "Colour Palette")
+    - I chose the pastel colours to create a nostalgic 1950's style. I used [Coolers](https://coolors.co/93032e-c69f89-a6a15e-84894a-034c3c) to select a complimentary colour palette ![colour palette](/documentation/coolers.png "Colour Palette")
   - #### Typography
   - #### Imagery
     - Imagery is important. The large background image is designed to be striking and catch the user's attention. It creates a uniformity that links all the pages together. Photo by Lukas</a> on <a href="https://www.pexels.com/photo/variety-of-vegetables-616401/">Pexels</a>
@@ -273,9 +273,15 @@ Actual Enviroment variables not disclosed for security
 
 ## Credits
 
+### Code
+
 - Code Institute's Task Manager project walkthrough. Used to create the user authentication function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
 - Code Institute's Task Manager project walkthrough. Used to create the search function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
+
+### Content
+
+- All content for the individual recipes (images and text) was obtained from [BBC Good Food](https://www.bbcgoodfood.com/)
 
 ### Acknowledgements
 

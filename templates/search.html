@@ -23,7 +23,7 @@
 
                 <!-- submit -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
+                    <button type="submit" class="col s12 btn-large text-shadow">
                         Search <i class="fas fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -33,45 +33,27 @@
 {% endif %}
 
 <!-- Search results display -->
-
 {% if results %}
     <h2>Search Results for '{{ query }}'</h2>
+<div class="row">
     {% for result in results %}
-        <div class="row">
-            <div class="col s12 m7">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ result.image }}">
-                    </div>
-                    <div class="card-name">
-                        <h3>{{ result.name }}</h3>
-                    </div>
-                    <div class="card-difficulty">
-                        <p>{{ result.difficulty }}</p>
-                    </div>
-                    <div class="card-ingredients">
-                        <h5>Ingredients:</h5>
-                        <ul>
-                            {% for ingredient in result.ingredients.split(';') %}
-                                <li>{{ ingredient.strip() }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="card-method">
-                        <h5>Method:</h5>
-                        <ul>
-                            {% for step in result.method.split(';') %}
-                                <li>{{ step.strip() }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="created-by">
-                        <p> Recipe created by: {{ result.created_by }}</p>
-                    </div>
-                </div>
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-image">
+                    <img src="{{ result.image }}">
+                </span>
+                <span class="card-name">
+                    <h5>{{ result.name }}</h5>
+                </span>
+                <span class="card-difficulty">
+                    <p>Level: {{ result.difficulty }}</p>
+                </span>
             </div>
         </div>
+    </div>
     {% endfor %}
+</div>
 {% endif %}
 <!-- Redirect to register page if no results found -->
 {% if not results %}

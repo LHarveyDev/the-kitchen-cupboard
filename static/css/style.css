@@ -1,10 +1,14 @@
+nav {
+    background-color: #a5dade;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .flashes h4 {
     line-height: 1;
-    background-color: #c0ca33;
+    background-color: #a5dade;
 }
 
 h1 {
@@ -20,7 +24,7 @@ body {
     background-image: url('/static/images/food.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #c0ca33;
+    background-color: #a5dade;
 }
 
 .text-home {
@@ -47,11 +51,20 @@ body {
     font-size: 1.5rem;
 }
 
+.btn-large {
+    background-color: #B0D66E;
+}
+
+.card {
+    height: 400px;
+    background-color: #FFC9B9;
+}
+
 /* Social Networks*/
 
 .footer {
     text-align: center;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
