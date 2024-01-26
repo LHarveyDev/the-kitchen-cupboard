@@ -2,63 +2,37 @@
 {% block content %}
 
 <!-- Profile page to display logged in users details -->
-
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h4>
-                    {{ user.username }}'s Dashboard
-                </h4>
+<div id="dashboard">
+    <h4>{{ user.username }}'s Dashboard</h4>
+        <h5>My Recipes:</h5>
+</div>
+            
             <!-- displays users recipes -->
-            <div>
-                <h5>My Recipes:</h5>
-                <ul>
-                    {% for recipe in recipes %}
-                    <div class="col s12 m6 l3">
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="card-image">
-                                    <!-- Use recipe.image instead of result.image -->
-                                    <img src="{{ recipe.image }}">
-                                </span>
-                                <span class="card-name">
-                                    <h3>{{ recipe.name }}</h3>
-                                </span>
-                                <span class="card-difficulty">
-                                    <p>{{ recipe.difficulty }}</p>
-                                </span>
-                                <span class="card-ingredients">
-                                    <h5>Ingredients:</h5>
-                                    <ul>
-                                        {% for ingredient in recipe.ingredients.split(';') %}
-                                        <li>{{ ingredient.strip() }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </span>
-                                <span class="card-method">
-                                    <h5>Method:</h5>
-                                    <ul>
-                                        {% for step in recipe.method.split(';') %}
-                                        <li>{{ step.strip() }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </span>
-                                <span class="created-by">
-                                    <p> Recipe created by: {{ recipe.created_by }}</p>
-                                </span>
-                            </div>
-                        </div>
+<div class="row">
+    {% for recipe in recipes %}
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-image">
+                        <img src="{{ recipe.image }}">
+                    </span>
+                    <span class="card-name">
+                        <h5>{{ recipe.name }}</h5>
+                    </span>
+                    <span class="created-by">
+                        <p> Recipe created by: {{ recipe.created_by }}</p>
+                    </span>
+                            <!-- options to edit/delete own recipe -->
+                    <div class="s3">
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                    class="btn-small light-blue lighten-1 fas fa-pen-to-square prefix">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                    class="btn-small red accent-4 fas fa-trash prefix">Delete</a>
                     </div>
-                        <!-- options to edit/delete own recipe -->
-                        <div class="s3">
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1 fas fa-pen-to-square prefix">Edit</a>
-                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-4 fas fa-trash prefix">Delete</a>  
-                        </div>
-                    {% endfor %}
-                </ul>
+                </div>
             </div>
         </div>
-    </div>
+    {% endfor %}
 </div>
-
-{% endblock %}
+            
+    {% endblock %}

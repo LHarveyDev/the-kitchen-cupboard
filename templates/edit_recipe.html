@@ -7,17 +7,20 @@
 <h3>Edit your recipe using the form below</h3>
 </div>
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" enctype="multipart/form-data">
             <div class="card-panel">
-
-                <!-- image
+<!-- recipe image upload field -->
                 <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-image prefix"></i>
-						<input id="recipe_image" name="recipe_image" type="text" validate>
-						<label for="recipe_image">Upload Image</label>
-					</div>
-                </div> -->
+                    <div class="file-field input-field col s12">
+                        <div class="btn">
+                          <span>Upload Image</span>
+                          <input type="file" name="recipe_image">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
 <!-- recipe name input field -->
 <div class="row">
     <div class="input-field col s12">
@@ -45,7 +48,7 @@
 
                 <!-- submit button -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large lime darken-1 text-shadow">
+                    <button type="submit" class="col s12 btn-large text-shadow">
                         Submit <i class="fas fa-right-to-bracket"></i>
                     </button>
                 </div>

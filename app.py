@@ -17,7 +17,9 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 UPLOAD_FOLDER = 'static/images/user_images'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
 
 mongo = PyMongo(app)
 
@@ -139,7 +141,7 @@ def upload_file():
         flash('No file part')
         return redirect(request.url)
 
-    file = request.files['file']
+    file = request.files['recipe_image']
 
     if file.filename == '':
         flash('No selected file')
@@ -153,12 +155,6 @@ def upload_file():
             # Save the file to the specified upload folder
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            # You can store the filename or file path in MongoDB if needed
-            # Example MongoDB insert code:
-            # image_url = 'your_base_url' + '/' + filename
-            # mongo.db.images.insert_one({'url': image_url})
-
-            # Continue with the rest of your code
             return redirect(url_for("profile"))
 
         except Exception as e:
@@ -212,7 +208,7 @@ def add_recipe():
 
 
 # Function to allow registered users to edit their own recipes
-@app.route("/edit_recipe/<recipe_id>)", methods=["GET", "POST"])
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
@@ -221,8 +217,32 @@ def edit_recipe(recipe_id):
         return redirect(url_for("profile"))
 
     if request.method == "POST":
+        # Check if the post request has the image upload
+        if 'recipe_image' in request.files:
+            file = request.files['recipe_image']
+
+            try:
+                # Handle file upload and save image URL to MongoDB
+                if file.filename != '':
+                    filename = secure_filename(file.filename)
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                else:
+                    # No new image uploaded, keep the existing image URL
+                    image_url = recipe.get('image')
+                    print("New Image URL:", image_url)  # Add this print statement
+
+            except Exception as e:
+                flash('Error uploading file: {}'.format(str(e)))
+                return redirect(request.url)
+        else:
+            # No new image uploaded
+            image_url = recipe.get('image')  # Keep the existing image URL
+            print("No new image uploaded. Using existing image URL:", image_url)  # Add this print statement
+
         # Update the recipe details in the database
         updated_recipe = {
+            "image": image_url,
             "name": request.form.get("recipe_name"),
             "ingredients": request.form.get("recipe_ingredients"),
             "method": request.form.get("recipe_method"),

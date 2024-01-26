@@ -55,8 +55,16 @@ body {
     background-color: #B0D66E;
 }
 
+#dashboard {
+    color: white;
+}
+
 .card {
     height: 400px;
+    background-color: #FFC9B9;
+}
+
+.card-panel {
     background-color: #FFC9B9;
 }
 
