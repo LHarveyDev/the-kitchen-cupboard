@@ -30,19 +30,28 @@ def home():
     return render_template("home.html")
 
 
-# Function to allow users to search database using keyword
+# Function to allow users to search the database using a keyword
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # Get the query parameter from the form
     query = request.form.get("query")
-    results = []
-# If any results are found then return as a list
-    if request.method == "POST" and query:
-        results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-# If no results are found display flash message and reload search page
-    if not results and query:
-        flash("No results found for '{}' Please try another search".format(
-            query))
 
+    # Initialize an empty list for results
+    results = []
+
+    # If a query is provided, perform the search
+    if request.method == "POST" and query:
+        # Store the query in the session
+        session['last_query'] = query
+        # Perform the search and get the results
+        results = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+
+    # If no results are found, display a flash message
+    if not results and query:
+        flash(
+            "No results found for '{}' Please try another search".format(query))
+
+    # Return the results and query to the template
     return render_template("search.html", results=results, query=query)
 
 
@@ -56,9 +65,10 @@ def recipe_detail(recipe_id):
         return redirect(url_for("search"))
 
     # Retrieve the last query from the session
-    last_query = session.get('last_query', '')
+    last_query = session.get('last_query')
 
-    return render_template("recipe_detail.html", recipe=recipe, last_query=last_query)
+    return render_template(
+        "recipe_detail.html", recipe=recipe, last_query=last_query)
 
 
 # Function to allow new users to register
@@ -239,12 +249,14 @@ def edit_recipe(recipe_id):
                 # Handle file upload and save image URL to MongoDB
                 if file.filename != '':
                     filename = secure_filename(file.filename)
-                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                    image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                    file.save(
+                        os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    image_url = os.path.join(
+                        app.config['UPLOAD_FOLDER'], filename)
                 else:
                     # No new image uploaded, keep the existing image URL
                     image_url = recipe.get('image')
-                    print("New Image URL:", image_url)  # Add this print statement
+                    print("New Image URL:", image_url)
 
             except Exception as e:
                 flash('Error uploading file: {}'.format(str(e)))
@@ -252,7 +264,8 @@ def edit_recipe(recipe_id):
         else:
             # No new image uploaded
             image_url = recipe.get('image')  # Keep the existing image URL
-            print("No new image uploaded. Using existing image URL:", image_url)  # Add this print statement
+            print(
+                "No new image uploaded. Using existing image URL:", image_url)
 
         # Update the recipe details in the database
         updated_recipe = {
