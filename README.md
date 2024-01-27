@@ -115,6 +115,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - #### Typography
   - #### Imagery
     - Imagery is important. The large background image is designed to be striking and catch the user's attention. It creates a uniformity that links all the pages together. Photo by Lukas</a> on <a href="https://www.pexels.com/photo/variety-of-vegetables-616401/">Pexels</a>
+    - Image by <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
 
 * ### Wireframes & Flowcharts
 

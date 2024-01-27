@@ -40,12 +40,14 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
+                <a href="{{ url_for('recipe_detail', recipe_id=result._id) }}">
                 <span class="card-image">
                     <img src="{{ result.image }}">
                 </span>
                 <span class="card-name">
                     <h5>{{ result.name }}</h5>
                 </span>
+                </a>
                 <span class="card-difficulty">
                     <p>Level: {{ result.difficulty }}</p>
                 </span>

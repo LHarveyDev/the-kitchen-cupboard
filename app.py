@@ -9,7 +9,6 @@ from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -45,6 +44,21 @@ def search():
             query))
 
     return render_template("search.html", results=results, query=query)
+
+
+# Function to open individual cards on their own page
+@app.route("/recipe/<recipe_id>")
+def recipe_detail(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    if not recipe:
+        flash("Recipe not found")
+        return redirect(url_for("search"))
+
+    # Retrieve the last query from the session
+    last_query = session.get('last_query', '')
+
+    return render_template("recipe_detail.html", recipe=recipe, last_query=last_query)
 
 
 # Function to allow new users to register
