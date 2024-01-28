@@ -91,7 +91,7 @@ body {
     align-items: center;
     text-align: center;
     min-height: auto;
-    color: white;
+    color: slategray;
 }
 
 .brand-text {
@@ -103,13 +103,23 @@ body {
     border-radius: 15px;
 }
 
-#dashboard {
-    color: white;
+.dashboard {
+    color: slategray;
+    font-size: 20px;
+    font-weight: 500;
+    width: 60%;
+    text-align: center;
+    background-color: #FFC9B9;
+    border-radius: 15px; 
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .card {
     height: 400px;
     background-color: #FFC9B9;
+    border-radius: 15px;
 }
 
 .card-panel {

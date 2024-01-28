@@ -113,8 +113,9 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - #### Colour Scheme
     - I chose the pastel colours to create a nostalgic 1950's style. I used [Coolers](https://coolors.co/93032e-c69f89-a6a15e-84894a-034c3c) to select a complimentary colour palette ![colour palette](/documentation/coolers.png "Colour Palette")
   - #### Typography
+    - I chose google fonts 'Pacifico' for my header. This font fits in perfectly with my 1950's styling. I added some text-shadow to create a bit more contrast between the font and the background to ensure legibility.
   - #### Imagery
-    - Imagery is important. The large background image is designed to be striking and catch the user's attention. It creates a uniformity that links all the pages together. Photo by Lukas</a> on <a href="https://www.pexels.com/photo/variety-of-vegetables-616401/">Pexels</a>
+    - Imagery is important. The large background image is designed to be striking and catch the user's attention. It creates a uniformity that links all the pages together.
     - Image by <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
 
 * ### Wireframes & Flowcharts
