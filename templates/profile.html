@@ -13,6 +13,7 @@
         <div class="col s12 m6 l3">
             <div class="card">
                 <div class="card-content">
+                    <a href="{{ url_for('recipe_detail', recipe_id=recipe._id) }}">
                     <span class="card-image">
                         <img src="{{ recipe.image }}">
                     </span>

@@ -12,12 +12,29 @@ nav {
 }
 
 h1 {
-    font-weight: 600;
+    color: #a5dade;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000;
 }
 
 h2 {
     color: white;
     text-align: center;
+}
+
+.text-join {
+    font-size: 20px;
+    background-color: #FFC9B9;
+    border-radius: 15px; 
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 body {
@@ -32,9 +49,39 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: slategray;
+    font-size: 20px;
+    font-weight: 500;
     text-align: center;
+    padding: 5px;
     min-height: 100vh;
-    color: white;
+}
+
+.text-search {
+    width: 50%;
+    color: slategray;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #FFC9B9;
+    border-radius: 15px; 
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.text-add {
+    color: slategray;
+    font-size: 20px;
+    font-weight: 500;
+    width: 60%;
+    text-align: center;
+    background-color: #FFC9B9;
+    border-radius: 15px; 
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .text-box {
@@ -53,6 +100,7 @@ body {
 
 .btn-large {
     background-color: #B0D66E;
+    border-radius: 15px;
 }
 
 #dashboard {
@@ -66,6 +114,7 @@ body {
 
 .card-panel {
     background-color: #FFC9B9;
+    border-radius: 10px;
 }
 
 .card-detail {
@@ -96,5 +145,5 @@ body {
     font-size: 200%;
     margin: 5px;
     padding: 2%;
-    color: white;
+    color: rgb(185, 184, 184);
 }
