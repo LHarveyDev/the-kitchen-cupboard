@@ -34,7 +34,9 @@
 
 <!-- Search results display -->
 {% if results %}
-    <h2>Search Results for '{{ query }}'</h2>
+<div class="text-results">
+    <p>Search Results for '{{ query }}'</p>
+</div>
 <div class="row">
     {% for result in results %}
     <div class="col s12 m6 l3">
