@@ -61,9 +61,10 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 ## Table Of Contents:
 1. [Design & Planning](#design-&-planning)
     * [User Stories](#user-stories)
-    * [Wireframes & Flowcharts](#wireframes-&-flowcharts)
-    * [Typography](#typography)
     * [Colour Scheme](#colour-scheme)
+    * [Typography](#typography)
+    * [Imnagery](#imagery)
+    * [Wireframes & Flowcharts](#wireframes-&-flowcharts)
     * [Database Diagram](#database-diagram)
     
 2. [Features](#features)
@@ -119,7 +120,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 
 ### Wireframes & Flowcharts
 
-  - User Flowchart - [View](/documentation/the_kitchen_cupboard.png)
+  - User Flowchart - [View](/documentation/flow_chart.png)
   - Home Page Wireframe - [View](/documentation/kitchen_home.png)
   - Register Page Wireframe - [View](/documentation/kitchen_register.png)
   - Sign In Page Wireframe - [View](/documentation/kitchen_signin.png)
@@ -127,10 +128,8 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - Search Results Page Wireframe - [View](/documentation/kitchen_results.png)
   - Add/Edit Page Wireframe - [View](/documentation/edit.pdf)
 
-## Features
-
-- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive)
-![Am I Responsive](/documentation/amiresponsive.jpg)
+### DataBase Diagram
+  - Database Schema - [View](/documentation/database_schema.png)
 
 ## Technologies Used
 
@@ -143,11 +142,11 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 ### Frameworks, Libraries & Programs Used
 
 1. [Lucidchart:](https://lucidchart.com/)
-   - Lucidchart was used to create the [flowcharts](https://lucidchart.com/) during the design process
+   - Lucidchart was used to create the [flowcharts](#wireframes-&-flowcharts) during the design process
 1. [Balsamiq:](https://balsamiq.com/)
-   - Balsamiq was used to create the [wireframes](https://balsamiq.com/) during the design process
+   - Balsamiq was used to create the [wireframes](#wireframes-&-flowcharts) during the design process
 1. [dbdiagram:](https://dbdiagram.io)
-   - Balsamiq was used to create the [database schema](https://dbdiagram.io) during the design process
+   - dbdiagram was used to create the [database schema](/documentation/database_schema.png) during the design process
 1. [Flask:](https://palletsprojects.com/p/flask/)
    - Flask was used to create the Python web framework.
 1. [Random Keygen:](https://randomkeygen.com/)
@@ -156,8 +155,6 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
    - Materialize was used to assist with the responsiveness and styling of the website.
 1. [JQuery:](https://releases.jquery.com/)
    - jQuery was used in conjunction with Materialize.
-1. [CDNjs:](https://cdnjs.com/)
-   - CDNjs was used to find the Font Awesome CDN.
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
@@ -179,9 +176,18 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - Database Schema - [View](/documentation/database_schema.png)
 
 ## Features:
-  - **Navigation Bar** I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT. I chose to keep the search option available to non-registered users as I wanted first-time visitors to be able to explore before committing to joining. Once logged in, users have the ability to upload recipes of their own and edit /delete their recipes too.
-  - **Home Page** The home page is simple and directs visitors towards either the search function in the nav bar or the invitation to join the Kitchen Cupboard community. The wording used aims to be friendly, welcoming and informal. The use of the tablecloth image for the background creates uniformity within the pages of the site but also allows the content to be the focus. The font used for the heading conjures up the 1950's feel that I wanted for the site, I chose "Pacifico" from google fonts. The social media links are in the footer but they are very much in the background should people wish to find them rather than the focal point.
-  - **Search Page** The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first. Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed. The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title. The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles. The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page. The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
+  - **Navigation Bar** I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT. 
+  I chose to keep the search option available to non-registered users as I wanted first-time visitors to be able to explore before committing to joining. Once logged in, users have the ability to upload recipes of their own and edit /delete their recipes too.
+  - **Home Page** The home page is simple and directs visitors towards either the search function in the nav bar or the invitation to join the Kitchen Cupboard community. The wording used aims to be friendly, welcoming and informal. 
+  The use of the tablecloth image for the background creates uniformity within the pages of the site but also allows the content to be the focus. 
+  The font used for the heading conjures up the 1950's feel that I wanted for the site, I chose "Pacifico" from google fonts. 
+  The social media links are in the footer but they are very much in the background should people wish to find them rather than the focal point.
+  - **Search Page** The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first. 
+  Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed. 
+  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title. 
+  The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles. 
+  The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page. 
+  The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
   - 
 Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)
 
@@ -192,7 +198,9 @@ Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
 Check compatability with different browsers (Firefox, Edge, Chrome)
 ### Responsiveness
-Screenshots of the responsivness, pick few devices
+- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive)
+
+![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
 - **HTML** [HTML5](https://validator.w3.org/)
 - **CSS** [CSS](https://jigsaw.w3.org/css-validator/)
