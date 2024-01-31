@@ -117,7 +117,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - #### Imagery
     - Imagery is important. The large background image with repetitive pattern serves as a backdrop to the information displayed but does not compete for attention. It creates a uniformity that links all the pages together. Image by <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
 
-* ### Wireframes & Flowcharts
+### Wireframes & Flowcharts
 
   - User Flowchart - [View](/documentation/the_kitchen_cupboard.png)
   - Home Page Wireframe - [View](/documentation/kitchen_home.png)
@@ -129,7 +129,8 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 
 ## Features
 
-- Responsive on all device sizes - [Am I Responsive](https://ui.dev/amiresponsive?url=https://lharveydev.heroku.com/the-kitchen-cupboard/)
+- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive)
+![Am I Responsive](/documentation/amiresponsive.jpg)
 
 ## Technologies Used
 
