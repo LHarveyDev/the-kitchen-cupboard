@@ -53,7 +53,7 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ---
 
-Happy coding!
+![Am I Responsive](/documentation/amiresponsive.jpg)
 
 # The Kitchen Cupboard
 The Kitchen Cupboard is a searchable database of recipes. Registered users can add comments and recipe ideas and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.   
@@ -70,9 +70,13 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
     
 2. [Features](#features)
     * [Navigation](#Navigation-bar)
-    * [Footer](#footer)
     * [Home page](#home-page)
+    * [Search page](#search-page)
+    * [Recipe Details page](#recipe-details-page)
     * [Register page](#register-page)
+    * [Sign In page](#sign_in-page)
+    * [Profile page](#profile-page)
+    * [Add Recipe page](#add-recipe-page)
    
 
 3. [Technologies Used](#technologies-used)
@@ -174,7 +178,8 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
    - Heroku was used to deploy my project.
 
 ## Features:
-  - **Navigation Bar** I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. 
+  - **Navigation Bar**    
+  I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. 
   ![Nav bar](/documentation/navbar.jpg)    
   Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT.    
   ![Nav bar extended](/documentation/navbar_extra.jpg) 
@@ -194,8 +199,10 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first.    
   Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.    
   The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title.    
-  The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.    
-  ![Mobile view](uxresults_mobile.jpg =30%x) ![Tablet view](uxresults_ipad.jpg =30%x) ![Desktop view](uxresults_desktop.jpg =30%x)     
+  The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.  
+    
+  ![Mobile view](/documentation/uxresults_mobile.jpg =30%x) ![Tablet view](/documentation/uxresults_ipad.jpg =30%x) ![Desktop view](/documentation/uxresults_desktop.jpg =30%x)  
+
   The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page.    
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
 
@@ -244,8 +251,12 @@ I have tested compatibility on the following browsers. Safari, Chrome, Edge and 
 - Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Android (Galaxy A30 and Galaxy A), iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
-- **HTML** [HTML5](https://validator.w3.org/)
-- **CSS** [CSS](https://jigsaw.w3.org/css-validator/)
+- **HTML** 
+The W3 HTML validation tool was used. I validated by URI [HTML5](https://validator.w3.org/)
+![HTML Validator](/documentation/html_validation.jpg)
+- **CSS** 
+The W3 CSS validation tool was used. I validated by URI [CSS](https://jigsaw.w3.org/css-validator/)
+![CSS Validator](/documentation/css_validation.jpg)
 - **JS** [JS](https://www.jslint.com/)
 - **PYTHON** [PYTHON](https://www.pythonchecker.com/)
 Validate your code HTML, CSS, JS & Python - display screenshots
