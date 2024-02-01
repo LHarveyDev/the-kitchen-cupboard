@@ -204,7 +204,7 @@ def add_recipe():
                 return redirect(request.url)
         else:
             # Handle case where no file is uploaded
-            image_url = None
+            image_url = 'static/images/placeholder.jpg'
 
         recipe_name = request.form.get("recipe_name")
         recipe_ingredients = request.form.get("recipe_ingredients")

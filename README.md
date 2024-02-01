@@ -195,7 +195,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.    
   The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title.    
   The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.    
-  ![Mobile view](uxresults_mobile.jpg) ![Tablet view](uxresults_ipad.jpg) ![Desktop view](uxresults_desktop.jpg)     
+  ![Mobile view](uxresults_mobile.jpg =30%x) ![Tablet view](uxresults_ipad.jpg =30%x) ![Desktop view](uxresults_desktop.jpg =30%x)     
   The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page.    
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
 
@@ -224,7 +224,12 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
   - **Add Recipe Page**    
   ![Add recipe page](/documentation/uxaddrecipe_mobile.jpg)    
-  This page allows the registered user to add their own recipes which will then be searchable by other users. The form follows the format of the other forms on the site. A text box explains the purpose of the form.    
+  This page allows the registered user to add their own recipes which will then be searchable by other users. The form follows the format of the other forms on the site for uniformity and brand identity. A text box explains the purpose of the form and then there are input fields for image, name, ingredients and method followed by a submit button.    
+  The upload image field restricts uploads to a file size of 1MB maximum. This was chosen to limit the storage space needed but could be reduced furthur if required. The file extensions allowed have been restricted to jpg, jpeg and png. This is a safety precaution and only allows image file formats to be uploaded. The uploading of an image is optional and if no image is provided a placeholder image will be displayed in its place.   
+  The recipe name field is unrestricted in length but the CSS text-overflow: ellipsis property has been applied to the display settings to prevent over-long titles being displayed in full.    
+  The ingredients input field contains placeholder text asking the user to list each ingredient on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
+  The method input field contains placeholder text asking the user to list each step on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
+  The submit button posts the information to my Mongodb database.     
 
 
 Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)
@@ -335,6 +340,7 @@ Actual Enviroment variables not disclosed for security
 ### Content
 
 - All content for the individual recipes (images and text) was obtained from [BBC Good Food](https://www.bbcgoodfood.com/)
+- Placeholder image acquired from [Freepik]("https://www.freepik.com/free-vector/hand-drawn-cutlery-set_16263394.htm#query=plate%20cutlery&position=2&from_view=search&track=ais&uuid=14df9a14-5a9b-431b-80f6-777890683ee5")Image by rawpixel.com
 
 ### Acknowledgements
 
