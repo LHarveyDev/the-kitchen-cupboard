@@ -56,15 +56,16 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 Happy coding!
 
 # The Kitchen Cupboard
-The Kitchen Cupboard is a searchable database of recipes. Registered users can add comments and recipe ideas and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.
+The Kitchen Cupboard is a searchable database of recipes. Registered users can add comments and recipe ideas and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.   
+The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.com/)
 
 ## Table Of Contents:
 1. [Design & Planning](#design-&-planning)
     * [User Stories](#user-stories)
     * [Colour Scheme](#colour-scheme)
     * [Typography](#typography)
-    * [Imnagery](#imagery)
-    * [Wireframes & Flowcharts](#wireframes-&-flowcharts)
+    * [Imagery](#imagery)
+    * [Wireframes](#wireframes)
     * [Database Diagram](#database-diagram)
     
 2. [Features](#features)
@@ -118,15 +119,15 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
   - #### Imagery
     - Imagery is important. The large background image with repetitive pattern serves as a backdrop to the information displayed but does not compete for attention. It creates a uniformity that links all the pages together. Image by <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
 
-### Wireframes & Flowcharts
-
+### Wireframes
   - User Flowchart - [View](/documentation/flow_chart.png)
   - Home Page Wireframe - [View](/documentation/kitchen_home.png)
   - Register Page Wireframe - [View](/documentation/kitchen_register.png)
   - Sign In Page Wireframe - [View](/documentation/kitchen_signin.png)
   - Search Page Wireframe - [View](/documentation/kitchen_search.png)
   - Search Results Page Wireframe - [View](/documentation/kitchen_results.png)
-  - Add/Edit Page Wireframe - [View](/documentation/edit.pdf)
+  - Profile Page Wireframe - [View](/documentation/kitchen_profile.png)
+  - Add/Edit Page Wireframe - [View](/documentation/kitchen_add_recipe.png)
 
 ### DataBase Diagram
   - Database Schema - [View](/documentation/database_schema.png)
@@ -172,21 +173,27 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 1. [Heroku:](https://heroku.com/)
    - Heroku was used to deploy my project.
 
-### DataBase Diagram
-  - Database Schema - [View](/documentation/database_schema.png)
-
 ## Features:
-  - **Navigation Bar** I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT. 
+  - **Navigation Bar** I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT.
+
   I chose to keep the search option available to non-registered users as I wanted first-time visitors to be able to explore before committing to joining. Once logged in, users have the ability to upload recipes of their own and edit /delete their recipes too.
-  - **Home Page** The home page is simple and directs visitors towards either the search function in the nav bar or the invitation to join the Kitchen Cupboard community. The wording used aims to be friendly, welcoming and informal. 
-  The use of the tablecloth image for the background creates uniformity within the pages of the site but also allows the content to be the focus. 
-  The font used for the heading conjures up the 1950's feel that I wanted for the site, I chose "Pacifico" from google fonts. 
+  - **Home Page** The home page is simple and directs visitors towards either the search function in the nav bar or the invitation to join the Kitchen Cupboard community. The wording used aims to be friendly, welcoming and informal.
+
+  The use of the tablecloth image for the background creates uniformity within the pages of the site but also allows the content to be the focus.
+
+  The font used for the heading conjures up the 1950's feel that I wanted for the site, I chose "Pacifico" from google fonts.
+
   The social media links are in the footer but they are very much in the background should people wish to find them rather than the focal point.
-  - **Search Page** The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first. 
-  Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed. 
-  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title. 
-  The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles. 
-  The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page. 
+  - **Search Page** The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first.
+
+  Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.
+
+  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title.
+
+  The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.
+
+  The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page.
+
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
   - 
 Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)
