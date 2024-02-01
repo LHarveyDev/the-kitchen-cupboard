@@ -251,11 +251,11 @@ I have tested compatibility on the following browsers. Safari, Chrome, Edge and 
 - Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Android (Galaxy A30 and Galaxy A), iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
-- **HTML** 
-The W3 HTML validation tool was used. I validated by URI [HTML5](https://validator.w3.org/)
+- **HTML**    
+The W3 [HTML5](https://validator.w3.org/) validation tool was used. I validated by URI 
 ![HTML Validator](/documentation/html_validation.jpg)
-- **CSS** 
-The W3 CSS validation tool was used. I validated by URI [CSS](https://jigsaw.w3.org/css-validator/)
+- **CSS**    
+The W3 [CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI 
 ![CSS Validator](/documentation/css_validation.jpg)
 - **JS** [JS](https://www.jslint.com/)
 - **PYTHON** [PYTHON](https://www.pythonchecker.com/)
