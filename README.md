@@ -178,7 +178,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
    - Heroku was used to deploy my project.
 
 ## Features:
-  - **Navigation Bar**    
+  - ### Navigation Bar    
   I used Materialize to build my navigation bar, it collapses down on mobile screens and becomes a burger menu. The options available for non-registered users are HOME/SEARCH/SIGN IN/REGISTER. 
   ![Nav bar](/documentation/navbar.jpg)    
   Once registered the options offered are HOME/SEARCH/PROFILE/ADD RECIPE/SIGN OUT.    
@@ -186,7 +186,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   I chose to keep the search option available to non-registered users as I wanted first-time visitors to be able to explore before committing to joining. Once logged in, users have the ability to upload recipes of their own and edit /delete their recipes too.    
 
 
-  - **Home Page**    
+  - ### Home Page    
   ![Home page](/documentation/uxhome_mobile.jpg)    
   The home page is simple and directs visitors towards either the search function in the nav bar or the invitation to join the Kitchen Cupboard community. The wording used aims to be friendly, welcoming and informal.    
   The use of the tablecloth image for the background creates uniformity within the pages of the site but also allows the content to be the focus.    
@@ -194,7 +194,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The social media links are in the footer but they are very much in the background should people wish to find them rather than the focal point.
 
 
-  - **Search Page**    
+  - ### Search Page    
   ![Search page](/documentation/uxsearch_mobile.jpg)  
   The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first.    
   Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.    
@@ -207,9 +207,9 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
 
 
-  - **Recipe Details Page**    
+  - ### Recipe Details Page    
 
-  - **Register Page**    
+  - ### Register Page    
   ![Register page](/documentation/uxregister_mobile.jpg)  
   The register page has a simple layout where the user is presented with a form to fill in consisting of two fields, username and password. The placeholder text explains that the chosen username must contain at least five characters.    
   The form is based on the code from the Code Institute non-relational mini project. I really liked the idea of the input fields changing colour from red to green once a valid username and password have been selected. If an invalid word is chosen a pop-up prompt reminds the user of the minimum character rule. I have used font awesome icons to illustrate what the fields are for.    
@@ -217,19 +217,19 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The form looks just as good on mobile devices with all information visible without having to scroll down.
 
 
-  - **Sign In Page**    
+  - ### Sign In Page    
   ![Sign in page](/documentation/uxsignin_mobile.jpg)  
   The sign in page repeats the layout and features of the 'Register' page, this keeps the site looking uniform. If an incorrect username or password is entered a flash message is displayed 'Incorrect Username and/or Password'. This message deliberately does not specify whether is was the username or password that was incorrect to reduce the chance of a malicious user attempting to guess. Extra layers of security and complexity could be added dependent on how the site evolves and the user data it contains. I have used Werkzeug for password hashing to protect registered users data.    
   The text under the form provides a link to 'Register' for new users who might have found themselves in the wrong place.    
   The form looks just as good on mobile devices with all information visible without having to scroll down.
 
 
-  - **Profile Page**    
+  - ### Profile Page    
   ![Profile page](/documentation/uxprofile_mobile.jpg)  
   The signed in user is automatically re-directed to their profile page where they are greeted by a welcome message. The profile page contains the dashboard which displays their own recipes and offers the ability to edit or delete their own recipes if desired. Once signed in the 'Add Recipe' option is displayed in the navigation bar.
 
 
-  - **Add Recipe Page**    
+  - ### Add Recipe Page    
   ![Add recipe page](/documentation/uxaddrecipe_mobile.jpg)    
   This page allows the registered user to add their own recipes which will then be searchable by other users. The form follows the format of the other forms on the site for uniformity and brand identity. A text box explains the purpose of the form and then there are input fields for image, name, ingredients and method followed by a submit button.    
   The upload image field restricts uploads to a file size of 1MB maximum. This was chosen to limit the storage space needed but could be reduced furthur if required. The file extensions allowed have been restricted to jpg, jpeg and png. This is a safety precaution and only allows image file formats to be uploaded. The uploading of an image is optional and if no image is provided a placeholder image will be displayed in its place.   
