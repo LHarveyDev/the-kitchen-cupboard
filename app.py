@@ -18,7 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 UPLOAD_FOLDER = 'static/images/user_images'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
 mongo = PyMongo(app)
 
@@ -207,6 +207,7 @@ def add_recipe():
             image_url = 'static/images/placeholder.jpg'
 
         recipe_name = request.form.get("recipe_name")
+        recipe_difficulty = request.form.get("recipe_difficulty")
         recipe_ingredients = request.form.get("recipe_ingredients")
         recipe_method = request.form.get("recipe_method")
 
@@ -217,6 +218,7 @@ def add_recipe():
 
         recipe = {
             "image": image_url,
+            "difficulty": recipe_difficulty,
             "name": recipe_name,
             "ingredients": recipe_ingredients,
             "method": recipe_method,
@@ -253,24 +255,19 @@ def edit_recipe(recipe_id):
                         os.path.join(app.config['UPLOAD_FOLDER'], filename))
                     image_url = os.path.join(
                         app.config['UPLOAD_FOLDER'], filename)
-                else:
-                    # No new image uploaded, keep the existing image URL
-                    image_url = recipe.get('image')
-                    print("New Image URL:", image_url)
 
             except Exception as e:
                 flash('Error uploading file: {}'.format(str(e)))
                 return redirect(request.url)
         else:
             # No new image uploaded
-            image_url = recipe.get('image')  # Keep the existing image URL
-            print(
-                "No new image uploaded. Using existing image URL:", image_url)
+            image_url = recipe.get('image')
 
-        # Update the recipe details in the database
+            # Update the recipe details in the database
         updated_recipe = {
             "image": image_url,
             "name": request.form.get("recipe_name"),
+            "difficulty": request.form.get("recipe_difficulty"),
             "ingredients": request.form.get("recipe_ingredients"),
             "method": request.form.get("recipe_method"),
             "created_by": session["user"]
