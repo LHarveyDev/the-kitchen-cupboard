@@ -15,11 +15,6 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-UPLOAD_FOLDER = 'static/images/user_images'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
-
 mongo = PyMongo(app)
 
 
@@ -31,7 +26,7 @@ def home():
 
 
 # Function to allow users to search the database using a keyword
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search", methods=["GET"])
 def search():
     # Get the query parameter from the form
     query = request.args.get("query")
@@ -55,7 +50,7 @@ def search():
     return render_template("search.html", results=results, query=query)
 
 
-# Function to open individual cards on their own page
+# Function to open individual recipe cards full screen
 @app.route("/recipe/<recipe_id>")
 def recipe_detail(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -159,53 +154,10 @@ def signout():
     return redirect(url_for("signin"))
 
 
-@app.route("/upload", methods=["POST"])
-def upload_file():
-    if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-
-    file = request.files['recipe_image']
-
-    if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
-
-    if file:
-        try:
-            # Ensure a secure filename to prevent security vulnerabilities
-            filename = secure_filename(file.filename)
-
-            # Save the file to the specified upload folder
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-            return redirect(url_for("profile"))
-
-        except Exception as e:
-            # Handle exceptions (e.g., file save failure)
-            flash('Error uploading file: {}'.format(str(e)))
-            return redirect(request.url)
-
-
 # Function to allow registered users to add their own recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        # Check if the post request has the image upload
-        if 'recipe_image' in request.files:
-            file = request.files['recipe_image']
-            # Handle file upload and save image URL to MongoDB
-            try:
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            except Exception as e:
-                flash('Error uploading file: {}'.format(str(e)))
-                return redirect(request.url)
-        else:
-            # Handle case where no file is uploaded
-            image_url = '/static/images/placeholder.jpg'
-
         recipe_name = request.form.get("recipe_name")
         recipe_difficulty = request.form.get("recipe_difficulty")
         recipe_ingredients = request.form.get("recipe_ingredients")
@@ -217,7 +169,6 @@ def add_recipe():
         recipe_method = ';'.join(recipe_method.split('\n'))
 
         recipe = {
-            "image": image_url,
             "difficulty": recipe_difficulty,
             "name": recipe_name,
             "ingredients": recipe_ingredients,
@@ -243,29 +194,8 @@ def edit_recipe(recipe_id):
         return redirect(url_for("profile"))
 
     if request.method == "POST":
-        # Check if the post request has the image upload
-        if 'recipe_image' in request.files:
-            file = request.files['recipe_image']
-
-            try:
-                # Handle file upload and save image URL to MongoDB
-                if file.filename != '':
-                    filename = secure_filename(file.filename)
-                    file.save(
-                        os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                    image_url = os.path.join(
-                        app.config['UPLOAD_FOLDER'], filename)
-
-            except Exception as e:
-                flash('Error uploading file: {}'.format(str(e)))
-                return redirect(request.url)
-        else:
-            # No new image uploaded
-            image_url = recipe.get('image')
-
             # Update the recipe details in the database
         updated_recipe = {
-            "image": image_url,
             "name": request.form.get("recipe_name"),
             "difficulty": request.form.get("recipe_difficulty"),
             "ingredients": request.form.get("recipe_ingredients"),

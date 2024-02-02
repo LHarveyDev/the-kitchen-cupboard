@@ -9,26 +9,14 @@
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" enctype="multipart/form-data">
             <div class="card-panel">
-<!-- recipe image upload field -->
-                <div class="row">
-                    <div class="file-field input-field col s12">
-                        <div class="btn">
-                          <span>Upload Image</span>
-                          <input type="file" name="recipe_image">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </div>
 <!-- Difficulty level input field -->
 <div class="row">
     <div class="input-field col s12">
         <select id="recipe_difficulty" name="recipe_difficulty">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Difficult">Difficult</option>
+            <option value="" disabled>Select Difficulty Level</option>
+            <option value="Easy" {% if recipe.difficulty == 'Easy' %} selected {% endif %}>Easy</option>
+            <option value="Medium" {% if recipe.difficulty == 'Medium' %} selected {% endif %}>Medium</option>
+            <option value="Difficult" {% if recipe.difficulty == 'Difficult' %} selected {% endif %}>Difficult</option>
         </select>
         <label>Difficulty Level</label>
     </div>

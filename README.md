@@ -276,7 +276,7 @@ Test all your features, you can use the same approach
 List of bugs and how did you fix them, you can create simple table
 | Bug | Fix
 |:-------:|:--------|
-|   |    |
+| User images not displaying on recipe details page  |  Added code to function to ensure_forward_slash was added to filepath  |
 ## Deployment
 This website is deployed to Heroku from a GitHub repository, the following steps were taken:
 
@@ -347,6 +347,8 @@ Actual Enviroment variables not disclosed for security
 - Code Institute's Task Manager project walkthrough. Used to create the user authentication function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
 - Code Institute's Task Manager project walkthrough. Used to create the search function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
+- How to upload images [Flask Documentation](https://flask.palletsprojects.com/en/2.3.x/patterns/fileuploads/). This was used to create the ability for users to add their own images to their recipes.
+- I used this document as a refresher on how absolute and relative filepaths work [Stack Overflow](https://stackoverflow.com/questions/10659459/starting-with-a-forward-slash-in-html-for-href)
 
 ### Content
 

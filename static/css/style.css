@@ -73,13 +73,12 @@ body {
 
 .text-results {
     color: slategray;
-    font-size: 3.2vw;
+    font-size: 25px;
     font-weight: 500;
     width: 60%;
     text-align: center;
     background-color: #FFC9B9;
     border-radius: 15px; 
-    padding: 5px;
     margin: 0 auto;
     margin-top: 10px;
 }
