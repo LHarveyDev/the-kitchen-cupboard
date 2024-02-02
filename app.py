@@ -34,13 +34,13 @@ def home():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     # Get the query parameter from the form
-    query = request.form.get("query")
+    query = request.args.get("query")
 
     # Initialize an empty list for results
     results = []
 
     # If a query is provided, perform the search
-    if request.method == "POST" and query:
+    if request.method == "GET" and query:
         # Store the query in the session
         session['last_query'] = query
         # Perform the search and get the results
@@ -204,7 +204,7 @@ def add_recipe():
                 return redirect(request.url)
         else:
             # Handle case where no file is uploaded
-            image_url = 'static/images/placeholder.jpg'
+            image_url = '/static/images/placeholder.jpg'
 
         recipe_name = request.form.get("recipe_name")
         recipe_difficulty = request.form.get("recipe_difficulty")
