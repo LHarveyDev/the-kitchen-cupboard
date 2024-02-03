@@ -9,6 +9,14 @@
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" enctype="multipart/form-data">
             <div class="card-panel">
+                <!-- recipe url input field-->
+                <div class="input-field col s12">
+                    <i class="far fa-images prefix"></i>
+                    <input id="recipe_image" name="recipe_image" type="text" validate>
+                    <label for="recipe_image">Recipe Image URL (optional) 
+                    <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="You can upload your image to a free image hosting website (e.g. ImgBB) and paste direct link here"></i>
+                    </label>
+                </div>
 <!-- Difficulty level input field -->
 <div class="row">
     <div class="input-field col s12">
@@ -45,7 +53,6 @@
         <label class="active" for="recipe_method">Method</label>
     </div>
 </div>
-
                 <!-- submit button -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large text-shadow">

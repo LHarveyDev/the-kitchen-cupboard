@@ -7,17 +7,21 @@
     <div class="col s12">
         <div class="card-detail">
             <div class="card-content">
-                <span class="card-image">
-                    <img src="{{ recipe.image }}">
+                <span class="card-image-detail">
+                    {% if recipe.image %}
+                        <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" alt="No recipe image available">
+                    {% endif %}
                 </span>
                 <span class="card-name">
-                    <h5>{{ recipe.name }}</h5>
+                    <h2>{{ recipe.name }}</h2>
                 </span>
                 <span class="card-difficulty">
                     <p>Level: {{ recipe.difficulty }}</p>
                 </span>
                 <span class="card-ingredients">
-                    <h5>Ingredients:</h5>
+                    <h5 >Ingredients:</h5>
                     <ul>
                         {% for ingredient in recipe.ingredients.split(';') %}
                         <li>{{ ingredient.strip() }}</li>
@@ -31,6 +35,7 @@
                         <li>{{ step.strip() }}</li>
                         {% endfor %}
                     </ul>
+                </span>
                 </span>
                 <span class="created-by">
                     <p> Recipe created by: {{ recipe.created_by }}</p>

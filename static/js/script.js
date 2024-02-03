@@ -9,3 +9,5 @@ $(document).ready(function(){
 //Textarea auto resize
 $('#textarea1').val('New Text');
 M.textareaAutoResize($('#textarea1'));
+
+$('.tooltipped').tooltip();

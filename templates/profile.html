@@ -15,7 +15,11 @@
                 <div class="card-content">
                     <a href="{{ url_for('recipe_detail', recipe_id=recipe._id) }}">
                     <span class="card-image">
-                        <img src="{{ recipe.image }}">
+                        {% if recipe.image %}
+                            <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" alt="No recipe image available">
+                        {% endif %}
                     </span>
                     <span class="card-name">
                         <h5>{{ recipe.name }}</h5>

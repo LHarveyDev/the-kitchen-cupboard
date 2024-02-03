@@ -158,6 +158,7 @@ def signout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        recipe_image = request.form.get("recipe_image")
         recipe_name = request.form.get("recipe_name")
         recipe_difficulty = request.form.get("recipe_difficulty")
         recipe_ingredients = request.form.get("recipe_ingredients")
@@ -169,6 +170,7 @@ def add_recipe():
         recipe_method = ';'.join(recipe_method.split('\n'))
 
         recipe = {
+            "image": recipe_image,
             "difficulty": recipe_difficulty,
             "name": recipe_name,
             "ingredients": recipe_ingredients,
@@ -194,8 +196,14 @@ def edit_recipe(recipe_id):
         return redirect(url_for("profile"))
 
     if request.method == "POST":
-            # Update the recipe details in the database
+        # Check if a new image URL is provided
+        new_image = request.form.get("recipe_image")
+        if not new_image:
+            # If not, keep the original image from the database
+            new_image = recipe["image"]
+        # Update the recipe details in the database
         updated_recipe = {
+            "image": new_image,
             "name": request.form.get("recipe_name"),
             "difficulty": request.form.get("recipe_difficulty"),
             "ingredients": request.form.get("recipe_ingredients"),
@@ -209,6 +217,8 @@ def edit_recipe(recipe_id):
         return redirect(url_for("profile"))
 
     return render_template("edit_recipe.html", recipe=recipe)
+
+
 
 
 # Function to allow registered users to delete their own recipes
