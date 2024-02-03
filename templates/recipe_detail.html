@@ -1,8 +1,7 @@
-<!-- recipe_detail.html -->
 {% extends "base.html" %}
-
 {% block content %}
 
+<!-- individual recipe details -->
 <div class="row">
     <div class="col s12">
         <div class="card-detail">
@@ -45,4 +44,5 @@
     </div>
 </div>
 <a href="{{ url_for('search', query=last_query) }}">Back to Results</a>
+
 {% endblock %}

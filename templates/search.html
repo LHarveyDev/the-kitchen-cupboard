@@ -1,35 +1,35 @@
 {% extends "base.html" %} 
 {% block content %}
 
-<!-- Search page text and intructions on search terms to use-->
+<!-- Search form and intructions on search terms to use-->
 
 {% if not results %}
 <div class="text-search">
     <p>Delve into the Kitchen Cupboard to find a new recipe to try. You can search by name or ingredient.</p>
 </div>
 
-    <div class="row">
-        <form action="{{ url_for('search') }}" method="GET" class="col s12 m8 offset-m2">
-            <div class="card-panel">
+<div class="row">
+    <form action="{{ url_for('search') }}" method="GET" class="col s12 m8 offset-m2">
+        <div class="card-panel">
 
-                <!-- search -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-magnifying-glass prefix"></i>
-                        <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                        <label for="query">Search by keyword</label>
-                    </div>
-                </div>
-
-                <!-- submit -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large text-shadow">
-                        Search <i class="fas fa-magnifying-glass"></i>
-                    </button>
+            <!-- search -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-magnifying-glass prefix"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search by keyword</label>
                 </div>
             </div>
-        </form>
-    </div>
+
+            <!-- submit -->
+            <div class="row">
+                <button type="submit" class="col s12 btn-large text-shadow">
+                    Search <i class="fas fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endif %}
 
 <!-- Search results display -->

@@ -122,7 +122,7 @@ def signin():
     return render_template("signin.html")
 
 
-# Function displays the logged in users profile
+# Function to display the logged in users profile
 @app.route("/profile")
 def profile():
     # Check if the user is authenticated
@@ -143,15 +143,6 @@ def profile():
 
     return render_template(
         "profile.html", username=username, user=user, recipes=recipes)
-
-
-# Function to allow logged in users to logout
-@app.route("/signout")
-def signout():
-    # remove user from session cookie
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("signin"))
 
 
 # Function to allow registered users to add their own recipe
@@ -219,14 +210,21 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-
-
 # Function to allow registered users to delete their own recipes
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("profile"))
+
+
+# Function to allow logged in users to logout
+@app.route("/signout")
+def signout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("signin"))
 
 
 if __name__ == "__main__":

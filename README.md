@@ -200,7 +200,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   ![Search page](/documentation/uxsearch_mobile.jpg)  
   The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first.    
   Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.    
-  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title.    
+  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title. There is a minimum length required of 3 characters. If the user tries to perform a search without entering a search term a pop-up informs them that it is a required field. 
   The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.  
     
   ![Mobile view](/documentation/uxresults_mobile.jpg)

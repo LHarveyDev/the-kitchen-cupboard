@@ -6,62 +6,64 @@
 <div class="text-add">
 <p>Add your own recipe using the form below</p>
 </div>
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
-            <div class="card-panel">
-                <!-- recipe url input field-->
-                <div class="input-field col s12">
-                    <i class="far fa-images prefix"></i>
-                    <input id="recipe_image" name="recipe_image" type="text" validate>
-                    <label for="recipe_image">Recipe Image URL (optional) 
-                    <i class="fas fa-question-circle tooltipped" data-position="top" data-tooltip="You can upload your image to a free image hosting website (e.g. ) and paste direct link here"></i>
-                    </label>
-                </div>
-                <!-- difficulty level input field -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select id="recipe_difficulty" name="recipe_difficulty">
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Difficult">Difficult</option>
-                        </select>
-                        <label>Difficulty Level</label>
-                    </div>
-                </div>
-                <!-- recipe name input field -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-utensils prefix"></i>
-						<input id="recipe_name" name="recipe_name" type="text" validate>
-						<label for="recipe_name">Recipe Name</label>
-					</div>
-                </div>
-                <!-- recipe ingredients input field -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-carrot prefix"></i>
-						<textarea id="recipe_ingredients" name="recipe_ingredients" class="textarea"></textarea>
-						<label class="active" for="recipe_ingredients">Ingredients (Please list)</label>
-					</div>
-                </div>
-                <!-- recipe method input field -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-list-ol prefix"></i>
-						<textarea id="recipe_method" name="recipe_method" class="textarea"></textarea>
-						<label class="active" for="recipe_method">Method (Please list)</label>
-					</div>
-                </div>
 
-                <!-- submit button -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large text-shadow">
-                        Submit <i class="fas fa-right-to-bracket"></i>
-                    </button>
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
+        <div class="card-panel">
+            <!-- recipe url input field-->
+            <div class="input-field col s12">
+                <i class="far fa-images prefix"></i>
+                <input id="recipe_image" name="recipe_image" type="text" validate>
+                <label for="recipe_image">Recipe Image URL (optional)
+                    <i class="fas fa-question-circle tooltipped" data-position="top"
+                        data-tooltip="You can upload your image to a free image hosting website (e.g. ) and paste direct link here"></i>
+                </label>
+            </div>
+            <!-- difficulty level input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="recipe_difficulty" name="recipe_difficulty">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Difficult">Difficult</option>
+                    </select>
+                    <label>Difficulty Level</label>
                 </div>
             </div>
-        </form>
-    </div>
+            <!-- recipe name input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-utensils prefix"></i>
+                    <input id="recipe_name" name="recipe_name" type="text" validate>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <!-- recipe ingredients input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-carrot prefix"></i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="textarea"></textarea>
+                    <label class="active" for="recipe_ingredients">Ingredients (Please list)</label>
+                </div>
+            </div>
+            <!-- recipe method input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-ol prefix"></i>
+                    <textarea id="recipe_method" name="recipe_method" class="textarea"></textarea>
+                    <label class="active" for="recipe_method">Method (Please list)</label>
+                </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="row">
+                <button type="submit" class="col s12 btn-large text-shadow">
+                    Submit <i class="fas fa-right-to-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
