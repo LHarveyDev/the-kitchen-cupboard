@@ -201,7 +201,11 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title.    
   The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.  
     
-  ![Mobile view](/documentation/uxresults_mobile.jpg =30%x) ![Tablet view](/documentation/uxresults_ipad.jpg =30%x) ![Desktop view](/documentation/uxresults_desktop.jpg =30%x)  
+  ![Mobile view](/documentation/uxresults_mobile.jpg)
+  
+  ![Tablet view](/documentation/uxresults_ipad.jpg)   
+  
+  ![Desktop view](/documentation/uxresults_desktop.jpg)  
 
   The results cards only display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up on a separate page.    
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
