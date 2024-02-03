@@ -77,6 +77,8 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
     * [Sign In page](#sign_in-page)
     * [Profile page](#profile-page)
     * [Add Recipe page](#add-recipe-page)
+    * [Edit Recipe page](#edit-recipe-page)
+    * [CRUD](#crud)
    
 
 3. [Technologies Used](#technologies-used)
@@ -212,6 +214,11 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
 
   - ### Recipe Details Page    
+  ![Desktop view](/documentation/uxdetail_desktop.jpg)    
+  The individual recipe details page lists the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings.    
+  If the user has not supplied an image url when they added their recipe then the placeholder image will be displayed.    
+  Once the user has finished with the individual recipe they can use the 'Back to Results' button to return to their search results.     
+
 
   - ### Register Page    
   ![Register page](/documentation/uxregister_mobile.jpg)  
@@ -236,14 +243,25 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   - ### Add Recipe Page    
   ![Add recipe page](/documentation/uxaddrecipe_mobile.jpg)    
   This page allows the registered user to add their own recipes which will then be searchable by other users. The form follows the format of the other forms on the site for uniformity and brand identity. A text box explains the purpose of the form and then there are input fields for image, name, ingredients and method followed by a submit button.    
-  The upload image field restricts uploads to a file size of 1MB maximum. This was chosen to limit the storage space needed but could be reduced furthur if required. The file extensions allowed have been restricted to jpg, jpeg and png. This is a safety precaution and only allows image file formats to be uploaded. The uploading of an image is optional and if no image is provided a placeholder image will be displayed in its place.   
-  The recipe name field is unrestricted in length but the CSS text-overflow: ellipsis property has been applied to the display settings to prevent over-long titles being displayed in full.    
+  The recipe image field allows for a user to input an image url. There is a pop-up help box directing users to a free image hosting site called ImgBB which they can use without registering first. The uploading of an image url is optional and if no image is provided a placeholder image will be displayed in its place. In future versions of the site I would like to enable image uploads but this is beyond the scope of this project.   
+  The recipe name field is unrestricted in length but the text within it is displayed responsively to avoid overflow.
   The ingredients input field contains placeholder text asking the user to list each ingredient on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
   The method input field contains placeholder text asking the user to list each step on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
-  The submit button posts the information to my Mongodb database.     
+  The submit button posts the information to my Mongodb database.    
 
 
-Explain your features on the website,(navigation, pages, links, forms, input fields, CRUD....)
+  - ### Edit Recipe Page    
+  ![Edit recipe page](/documentation/uxeditrecipe_mobile.jpg)    
+  The edit recipe page is only available to signed in users. The edit and delete buttons are only visible on your own recipes preventing access to other users material. This is where they can update the contents of the recipe including uploading a new image url if desired. The updated information is sent to the database and overwrites the original data except for where there is no change.    
+
+
+  - ### CRUD    
+  Within my site users have the ability to 
+  * CREATE by adding their own recipes
+  * READ by searching for recipes within the database
+  * UPDATE by editing their own recipes
+  * DELETE their own recipes
+
 
 ## Testing
 
