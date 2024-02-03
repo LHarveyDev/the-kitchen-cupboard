@@ -60,7 +60,7 @@ The Kitchen Cupboard is a searchable database of recipes. Registered users can a
 The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.com/)
 
 ## Table Of Contents:
-1. [Design & Planning](#design-&-planning)
+1. [Design](#design)
     * [User Stories](#user-stories)
     * [Colour Scheme](#colour-scheme)
     * [Typography](#typography)
@@ -82,12 +82,11 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
    
 
 3. [Technologies Used](#technologies-used)
-4. [Libraries](#libraries-used)
-5. [Testing](#testing)
-6. [Bugs](#bugs)
-7. [Deployment](#deployment)
-8. [Credits](#credits)
-9. [Acknowledgment](#acknowledgment)
+4. [Testing](#testing)
+5. [Bugs](#bugs)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
+8. [Acknowledgment](#acknowledgment)
 
 ## Design & Planning:
 
@@ -270,18 +269,22 @@ Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
 I have tested compatibility on the following browsers. Safari, Chrome, Edge and Firefox.
 ### Responsiveness
-- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Android (Galaxy A30 and Galaxy A), iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
+- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Android (Galaxy A20e and Galaxy A), iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
 - **HTML**    
 The W3 [HTML5](https://validator.w3.org/) validation tool was used. I validated by URI 
 ![HTML Validator](/documentation/html_validation.jpg)
 - **CSS**    
-The W3 [CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI 
+The W3 [CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI. The errors encountered were all related to the Materialize framework that I used and not my custom CSS. 
 ![CSS Validator](/documentation/css_validation.jpg)
-- **JS** [JS](https://www.jslint.com/)
-- **PYTHON** [PYTHON](https://www.pythonchecker.com/)
-Validate your code HTML, CSS, JS & Python - display screenshots
+- **JS**    
+The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ but this was necessary for jQuery Materialize initialisation so can be dismissed. No other syntax errors were identified.        
+
+- **PYTHON**    
+The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. No error were found.    
+![Python Validator](/documentation/python_validation.jpg)    
+
 ### Manual Testing user stories
 Test all your user stories, you can create table 
 User Story |  Test | Pass

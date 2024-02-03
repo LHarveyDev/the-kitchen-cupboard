@@ -44,7 +44,8 @@ def search():
     # If no results are found, display a flash message
     if not results and query:
         flash(
-            "No results found for '{}' Please try another search".format(query))
+            "No results found for '{}' Please try another search".format(
+                query))
 
     # Return the results and query to the template
     return render_template("search.html", results=results, query=query)

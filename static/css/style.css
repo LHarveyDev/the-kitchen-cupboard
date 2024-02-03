@@ -1,3 +1,5 @@
+/* Navigation bar*/
+
 nav {
     background-color: #a5dade;
 }
@@ -6,10 +8,14 @@ nav {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* Flash messages*/
+
 .flashes h4 {
     line-height: 1;
     background-color: #a5dade;
 }
+
+/* Headers and text*/
 
 h1 {
     color: #a5dade;
@@ -32,10 +38,6 @@ h2 {
 h5 {
     font-family: "Pacifico", cursive;
     color: gray;
-}
-
-#text {
-    color: pink
 }
 
 body {
@@ -120,11 +122,6 @@ body {
     font-size: 1.5rem;
 }
 
-.btn-large {
-    background-color: #B0D66E;
-    border-radius: 15px;
-}
-
 .dashboard {
     color: slategray;
     font-size: 20px;
@@ -138,6 +135,15 @@ body {
     margin-top: 10px;
 }
 
+/* Buttons*/
+
+.btn-large {
+    background-color: #B0D66E;
+    border-radius: 15px;
+}
+
+/* Recipe cards*/
+
 .card {
     height: 400px;
     background-color: #FFC9B9;
@@ -147,6 +153,18 @@ body {
 .card-panel {
     background-color: #FFC9B9;
     border-radius: 10px;
+}
+
+.card-content {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.card-detail {
+    width: 70vw;
+    background-color: #FFC9B9;
+    border-radius: 10px;
+    margin-top: 10px;;
 }
 
 .card-image-detail {
@@ -161,18 +179,6 @@ body {
 .card-image-detail img {
     max-width: 100%;
     max-height: 100%;
-}
-
-.card-detail {
-    width: 70vw;
-    background-color: #FFC9B9;
-    border-radius: 10px;
-    margin-top: 10px;;
-}
-
-.card-content {
-    padding: 10px;
-    font-size: 15px;
 }
 
 /* Social Networks*/
