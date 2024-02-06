@@ -14,3 +14,8 @@ M.textareaAutoResize($('#textarea1'));
 
 //Tooltip on image url input field on add_recipe form
 $('.tooltipped').tooltip();
+
+//Recipe detail modal
+$(document).ready(function(){
+    $('.modal').modal();
+});

@@ -8,9 +8,10 @@
             <div class="card-content">
                 <span class="card-image-detail">
                     {% if recipe.image %}
-                        <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                    <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
                     {% else %}
-                        <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" alt="No recipe image available">
+                    <img src="{{ url_for('static', filename='images/placeholder.jpg') }}"
+                        alt="No recipe image available">
                     {% endif %}
                 </span>
                 <span class="card-name">
@@ -20,7 +21,7 @@
                     <p>Level: {{ recipe.difficulty }}</p>
                 </span>
                 <span class="card-ingredients">
-                    <h5 >Ingredients:</h5>
+                    <h5>Ingredients:</h5>
                     <ul>
                         {% for ingredient in recipe.ingredients.split(';') %}
                         <li>{{ ingredient.strip() }}</li>

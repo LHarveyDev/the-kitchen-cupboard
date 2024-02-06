@@ -42,13 +42,14 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
-                <a href="{{ url_for('recipe_detail', recipe_id=result._id) }}">
-                <span class="card-image">
-                    <img src="{{ result.image }}">
-                </span>
-                <span class="card-name">
-                    <h5>{{ result.name }}</h5>
-                </span>
+                <!-- Anchor tag with data-target attribute -->
+                <a href="#modal-{{ result._id }}" class="modal-trigger">
+                    <span class="card-image">
+                        <img src="{{ result.image }}">
+                    </span>
+                    <span class="card-name">
+                        <h5>{{ result.name }}</h5>
+                    </span>
                 </a>
                 <span class="card-difficulty">
                     <p>Level: {{ result.difficulty }}</p>
@@ -56,9 +57,34 @@
             </div>
         </div>
     </div>
+    <div id="modal-{{ result._id }}" class="modal">
+        <div class="modal-content">
+            <!-- Include recipe details here -->
+            <h4>{{ result.name }}</h4>
+            <img src="{{ result.image }}" alt="Recipe Image" class="responsive-img">
+            <p>Level: {{ result.difficulty }}</p>
+            <h5>Ingredients:</h5>
+            <ul>
+                {% for ingredient in result.ingredients.split(';') %}
+                <li>{{ ingredient.strip() }}</li>
+                {% endfor %}
+            </ul>
+            <h5>Method:</h5>
+            <ul>
+                {% for step in result.method.split(';') %}
+                <li>{{ step.strip() }}</li>
+                {% endfor %}
+            </ul>
+            <p>Recipe created by: {{ result.created_by }}</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
     {% endfor %}
 </div>
 {% endif %}
+
 <!-- Redirect to register page if no results found -->
 {% if not results %}
     <div class="row">

@@ -29,6 +29,11 @@ h1 {
         1px -1px 0 #000;
 }
 
+h4 {
+    font-family: "Pacifico", cursive;
+    color: gray;
+}
+
 h2 {
     font-family: "Pacifico", cursive;
     color: gray;
@@ -158,6 +163,16 @@ body {
 .card-content {
     padding: 10px;
     font-size: 15px;
+}
+
+.modal {
+    background-color: #FFC9B9;
+    border-radius: 20px;
+}
+
+.modal-content {
+    background-color: #FFC9B9;
+    border-radius: 20px;
 }
 
 .card-detail {
