@@ -42,7 +42,7 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
-                <!-- Anchor tag with data-target attribute -->
+                <!-- Modal for individual recipes -->
                 <a href="#modal-{{ result._id }}" class="modal-trigger">
                     <span class="card-image">
                         <img src="{{ result.image }}">
@@ -59,7 +59,6 @@
     </div>
     <div id="modal-{{ result._id }}" class="modal">
         <div class="modal-content">
-            <!-- Include recipe details here -->
             <h4>{{ result.name }}</h4>
             <img src="{{ result.image }}" alt="Recipe Image" class="responsive-img">
             <p>Level: {{ result.difficulty }}</p>

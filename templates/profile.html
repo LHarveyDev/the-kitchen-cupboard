@@ -13,13 +13,13 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
-                <a href="{{ url_for('recipe_detail', recipe_id=recipe._id) }}">
+                    <a href="#modal-{{ recipe._id }}" class="modal-trigger">
                     <span class="card-image">
                         {% if recipe.image %}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
                         {% else %}
                         <img src="{{ url_for('static', filename='images/placeholder.jpg') }}"
-                            alt="No recipe image available">
+                            alt="No recipe image available" class="responsive-img">
                         {% endif %}
                     </span>
                     <span class="card-name">
@@ -38,7 +38,34 @@
             </div>
         </div>
     </div>
+    <div id="modal-{{ recipe._id }}" class="modal">
+        <div class="modal-content">
+            <h4>{{ recipe.name }}</h4>
+            {% if recipe.image %}
+                        <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/placeholder.jpg') }}"
+                            alt="No recipe image available" class="responsive-img">
+                        {% endif %}
+            <p>Level: {{ recipe.difficulty }}</p>
+            <h5>Ingredients:</h5>
+            <ul>
+                {% for ingredient in recipe.ingredients.split(';') %}
+                <li>{{ ingredient.strip() }}</li>
+                {% endfor %}
+            </ul>
+            <h5>Method:</h5>
+            <ul>
+                {% for step in recipe.method.split(';') %}
+                <li>{{ step.strip() }}</li>
+                {% endfor %}
+            </ul>
+            <p>Recipe created by: {{ recipe.created_by }}</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
     {% endfor %}
 </div>
-            
-    {% endblock %}
+{% endblock %}
