@@ -175,6 +175,11 @@ body {
     border-radius: 20px;
 }
 
+.modal .modal-footer {
+    background-color: #FFC9B9;
+    border-radius: 20px;
+}
+
 .card-detail {
     width: 70vw;
     background-color: #FFC9B9;
