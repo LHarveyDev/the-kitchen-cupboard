@@ -146,28 +146,21 @@ def profile():
         "profile.html", username=username, user=user, recipes=recipes)
 
 
-# Function to allow registered users to add their own recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        recipe_image = request.form.get("recipe_image")
-        recipe_name = request.form.get("recipe_name")
-        recipe_difficulty = request.form.get("recipe_difficulty")
-        recipe_ingredients = request.form.get("recipe_ingredients")
-        recipe_method = request.form.get("recipe_method")
 
-        # Add semi-colon to the end of each line to ensure items
-        # are displayed correctly on individual lines
-        recipe_ingredients = ';'.join(recipe_ingredients.split('\n'))
-        recipe_method = ';'.join(recipe_method.split('\n'))
+        # Split ingredients and method by lines
+        ingredients = request.form.get("recipe_ingredients").splitlines()
+        method = request.form.get("recipe_method").splitlines()
 
         recipe = {
-            "image": recipe_image,
-            "difficulty": recipe_difficulty,
-            "name": recipe_name,
-            "ingredients": recipe_ingredients,
-            "method": recipe_method,
-            "created_by": session["user"]
+            "image": request.form.get("recipe_image"),
+            "name": request.form.get("recipe_name"),
+            "difficulty": request.form.get("recipe_difficulty"),
+            "ingredients": ingredients,
+            "method": method,
+            "created_by": session.get("user")
         }
 
         mongo.db.recipes.insert_one(recipe)
@@ -198,8 +191,8 @@ def edit_recipe(recipe_id):
             "image": new_image,
             "name": request.form.get("recipe_name"),
             "difficulty": request.form.get("recipe_difficulty"),
-            "ingredients": request.form.get("recipe_ingredients"),
-            "method": request.form.get("recipe_method"),
+            "ingredients": request.form.get("recipe_ingredients").splitlines(),
+            "method": request.form.get("recipe_method").splitlines(),
             "created_by": session["user"]
         }
 
@@ -207,6 +200,10 @@ def edit_recipe(recipe_id):
             {"_id": ObjectId(recipe_id)}, {"$set": updated_recipe})
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile"))
+
+    # Split ingredients and method into separate lines
+    recipe["ingredients"] = "\n".join(recipe.get("ingredients", []))
+    recipe["method"] = "\n".join(recipe.get("method", []))
 
     return render_template("edit_recipe.html", recipe=recipe)
 

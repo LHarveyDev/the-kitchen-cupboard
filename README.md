@@ -209,13 +209,13 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   ![Desktop view](/documentation/uxresults_desktop.jpg)  
 
   The results cards display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up in a modal.    
-  Originally the recipes opened up full-screen in a separate page and then the user had to navigate back to the results by clicking a 'Back to results' link. I changed this to the full recipe details opening in a Materialize pop-up modal. This modal can be dismissed by clicking the 'close' button in the footer or clicking outside of the modal on the results screen behind. I feel this gives a better user experience and helps to eliminate the user navigating backwards using the browser back button.        
+  Originally the recipes opened up full-screen in a separate page and then the user had to navigate back to the results by clicking a 'Back to results' link. I changed this to the full recipe details opening in a Materialize pop-up modal. This modal window can be dismissed by clicking the 'close' button in the footer or clicking outside of the modal on the results screen behind. I feel this gives a better user experience and helps to eliminate the user navigating backwards using the browser back button.        
   The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
 
 
   - ### Recipe Details Modal   
   ![Desktop view](/documentation/uxdetail_desktop.jpg)    
-  The individual recipe details page lists the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings.    
+  The individual recipe modal window details the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings.    
   If the user has not supplied an image url when they added their recipe then the placeholder image will be displayed.    
   Once the user has finished with the individual recipe they can use the 'close' button in the footer of the modal to return to their search results or alternatively just click outside of the modal.     
 

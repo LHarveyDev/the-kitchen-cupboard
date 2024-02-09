@@ -23,19 +23,18 @@
                 <span class="card-ingredients">
                     <h5>Ingredients:</h5>
                     <ul>
-                        {% for ingredient in recipe.ingredients.split(';') %}
-                        <li>{{ ingredient.strip() }}</li>
+                        {% for ingredient in recipe.ingredients %}
+                        <li>{{ ingredient }}</li>
                         {% endfor %}
                     </ul>
                 </span>
                 <span class="card-method">
                     <h5>Method:</h5>
                     <ul>
-                        {% for step in recipe.method.split(';') %}
-                        <li>{{ step.strip() }}</li>
+                        {% for method in recipe.method %}
+                        <li>{{ method }}</li>
                         {% endfor %}
                     </ul>
-                </span>
                 </span>
                 <span class="created-by">
                     <p> Recipe created by: {{ recipe.created_by }}</p>
@@ -44,6 +43,5 @@
         </div>
     </div>
 </div>
-<a href="{{ url_for('search', query=last_query) }}">Back to Results</a>
 
 {% endblock %}
