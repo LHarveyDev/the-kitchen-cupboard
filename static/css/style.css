@@ -8,10 +8,23 @@ nav {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.brand-text {
+    font-size: 1.5rem;
+}
+
 /* Flash messages*/
 
 .flashes h4 {
     line-height: 1;
+    background-color: #a5dade;
+}
+
+/* Background image*/
+
+body {
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #a5dade;
 }
 
@@ -29,27 +42,15 @@ h1 {
         1px -1px 0 #000;
 }
 
-h4 {
-    font-family: "Pacifico", cursive;
-    color: gray;
-}
-
 h2 {
     font-family: "Pacifico", cursive;
     color: gray;
     text-align: center;
 }
 
-h5 {
+h4, h5 {
     font-family: "Pacifico", cursive;
     color: gray;
-}
-
-body {
-    background-image: url('/static/images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #a5dade;
 }
 
 .text-home {
@@ -121,10 +122,6 @@ body {
     text-align: center;
     min-height: auto;
     color: slategray;
-}
-
-.brand-text {
-    font-size: 1.5rem;
 }
 
 /* Buttons*/

@@ -51,7 +51,7 @@ def search():
     return render_template("search.html", results=results, query=query)
 
 
-# Function to open individual recipe cards full screen
+""" Function to open individual recipe cards full screen
 @app.route("/recipe/<recipe_id>")
 def recipe_detail(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -64,7 +64,7 @@ def recipe_detail(recipe_id):
     last_query = session.get('last_query')
 
     return render_template(
-        "recipe_detail.html", recipe=recipe, last_query=last_query)
+        "recipe_detail.html", recipe=recipe, last_query=last_query) """
 
 
 # Function to allow new users to register
@@ -211,11 +211,26 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-# Function to allow registered users to delete their own recipes
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted")
+    # Retrieve the recipe from the database
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # Check if the recipe exists
+    if recipe:
+        # Check if the currently logged-in user matches the creator of the recipe
+        if session.get('user') == recipe.get('created_by'):
+            # Delete the recipe if the user is the creator
+            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+            flash("Recipe Successfully Deleted")
+        else:
+            # If the user is not the creator, display a message indicating unauthorized access
+            flash("You are not authorized to delete this recipe")
+    else:
+        # If the recipe doesn't exist, display a message indicating it couldn't be found
+        flash("Recipe not found")
+
+    # Redirect to the profile page regardless of the outcome
     return redirect(url_for("profile"))
 
 
