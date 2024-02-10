@@ -64,14 +64,14 @@
             <p>Level: {{ result.difficulty }}</p>
             <h5>Ingredients:</h5>
             <ul>
-                {% for ingredient in result.ingredients.split(';') %}
-                <li>{{ ingredient.strip() }}</li>
+                {% for ingredient in result.ingredients %}
+                <li>{{ ingredient }}</li>
                 {% endfor %}
             </ul>
             <h5>Method:</h5>
             <ul>
-                {% for step in result.method.split(';') %}
-                <li>{{ step.strip() }}</li>
+                {% for method in result.method %}
+                <li>{{ method }}</li>
                 {% endfor %}
             </ul>
             <p>Recipe created by: {{ result.created_by }}</p>

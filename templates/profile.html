@@ -13,7 +13,7 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
-                    <a href="#modal-{{ recipe._id }}" class="modal-trigger">
+                <a href="#modal-{{ recipe._id }}" class="modal-trigger">
                     <span class="card-image">
                         {% if recipe.image %}
                         <img src="{{ recipe.image }}" alt="Recipe Image" class="responsive-img">
@@ -25,16 +25,17 @@
                     <span class="card-name">
                         <h5>{{ recipe.name }}</h5>
                     </span>
+                </a>
                     <span class="created-by">
                         <p> Recipe created by: {{ recipe.created_by }}</p>
                     </span>
+            </div>
                     <!-- options to edit/delete own recipe -->
-                    <span class="edit-buttons">
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                            class="btn-small light-green lighten-1 fas fa-pen-to-square prefix">Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                            class="btn-small red accent-4 fas fa-trash prefix">Delete</a>
-                    </span>
+            <div class="edit-buttons">
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                    class="btn-small light-green lighten-1 fas fa-pen-to-square prefix">Edit</a>
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                    class="btn-small red accent-4 fas fa-trash prefix">Delete</a>
             </div>
         </div>
     </div>
