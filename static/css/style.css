@@ -102,14 +102,13 @@ h4, h5 {
 }
 
 .text-add {
-    color: slategray;
     font-size: 20px;
     font-weight: 500;
-    width: 60%;
+    width: 75%;
     text-align: center;
     background-color: #FFC9B9;
     border-radius: 15px; 
-    padding: 5px;
+    padding: 2px;
     margin: 0 auto;
     margin-top: 10px;
 }
@@ -135,9 +134,10 @@ h4, h5 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    display: flex;
+    display: flex;  
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2px;
+    padding: 4px;
     background-color: #FFC9B9;
 }
 
@@ -149,7 +149,7 @@ h4, h5 {
 /* Recipe cards and Modal*/
 
 .card {
-    height: 425px;
+    height: 450px;
     max-width: 100%; /* Ensure card width is responsive */
     background-color: #FFC9B9;
     border-radius: 15px;
