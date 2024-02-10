@@ -102,6 +102,7 @@ h4, h5 {
 }
 
 .text-add {
+    color: slategray;
     font-size: 20px;
     font-weight: 500;
     width: 75%;

@@ -51,22 +51,6 @@ def search():
     return render_template("search.html", results=results, query=query)
 
 
-""" Function to open individual recipe cards full screen
-@app.route("/recipe/<recipe_id>")
-def recipe_detail(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
-    if not recipe:
-        flash("Recipe not found")
-        return redirect(url_for("search"))
-
-    # Retrieve the last query from the session
-    last_query = session.get('last_query')
-
-    return render_template(
-        "recipe_detail.html", recipe=recipe, last_query=last_query) """
-
-
 # Function to allow new users to register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -201,7 +185,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile"))
 
-    # Split ingredients and method into separate lines
+    # Displays ingredients and method on separate lines
     recipe["ingredients"] = "\n".join(recipe.get("ingredients", []))
     recipe["method"] = "\n".join(recipe.get("method", []))
 

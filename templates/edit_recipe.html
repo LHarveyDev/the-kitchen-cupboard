@@ -3,7 +3,7 @@
 
 <!-- Page to allow logged in users to edit their own recipes -->
 
-<div class="text-box">
+<div class="text-add">
     <p>Edit your recipe using the form below</p>
 </div>
 
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix"></i>
-                    <input id="recipe_name" name="recipe_name" type="text" maxlength="35" value="{{ recipe.name }}" validate>
+                    <input id="recipe_name" name="recipe_name" type="text" maxlength="50" value="{{ recipe.name }}" validate>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
