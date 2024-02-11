@@ -323,8 +323,11 @@ Actual Enviroment variables not disclosed for security
 - Code Institute's Task Manager project walkthrough. Used to create the user authentication function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
 - Code Institute's Task Manager project walkthrough. Used to create the search function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
+- Python string splitlines method. I used this to display my ingredients and method items as lists [W3schools](https://www.w3schools.com/python/ref_string_splitlines.asp)
 - W3Schools tutorial on how flex-wrap works. I used this to make my edit and delete buttons responsive on laptop sized screens. [W3schools](https://www.w3schools.com/cssref/css3_pr_flex-wrap.php)
 - I used this document as a refresher on how absolute and relative filepaths work [Stack Overflow](https://stackoverflow.com/questions/10659459/starting-with-a-forward-slash-in-html-for-href)
+- The Flask documentation was referred to extensively [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/)
+- The Materialize documentation was used to create the various components including [Materialize Cards](https://materializecss.com/cards.html) and [Materialize Buttons](https://materializecss.com/buttons.html)
 
 ### Content
 
