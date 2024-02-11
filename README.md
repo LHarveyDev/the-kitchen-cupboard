@@ -162,7 +162,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
   - ### Recipe Details Modal   
   ![Desktop view](/documentation/uxdetail_desktop.jpg)    
-  The individual recipe modal window details the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings.    
+  The individual recipe modal window details the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings. If the contents is larger than the window a scroll bar appears on the right-hand side. The modal has been designed with a mobile first approach in mind.         
   If the user has not supplied an image url when they added their recipe then the placeholder image will be displayed.    
   Once the user has finished with the individual recipe they can use the 'close' button in the footer of the modal to return to their search results or alternatively just click outside of the modal.     
 
@@ -193,7 +193,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   The recipe image field allows for a user to input an image url. There is a pop-up help box directing users to a free image hosting site called ImgBB which they can use without registering first. The uploading of an image url is optional and if no image is provided a placeholder image will be displayed in its place. In future versions of the site I would like to enable image uploads but this is beyond the scope of this project.   
   The recipe name field is unrestricted in length but the text within it is displayed responsively to avoid overflow.
   The ingredients input field contains placeholder text asking the user to list each ingredient on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
-  The method input field contains placeholder text asking the user to list each step on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
+  The method input field contains placeholder text asking the user to list each step on a separate line. This is because I have written code that will split each line and store it in an array. When the recipe is called back up from the database the individual items in the array are then displayed as a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
   The submit button posts the information to my Mongodb database.    
 
 
@@ -221,16 +221,16 @@ I have tested compatibility on the following browsers. Safari, Chrome, Edge and 
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
 - **HTML**    
-The W3 [HTML5](https://validator.w3.org/) validation tool was used. I validated by URI 
+The W3 [HTML5](https://validator.w3.org/) validation tool was used. I validated by URI, no errors were found.
 ![HTML Validator](/documentation/html_validation.jpg)
 - **CSS**    
 The W3 [CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI. The errors encountered were all related to the Materialize framework that I used and not my custom CSS. 
 ![CSS Validator](/documentation/css_validation.jpg)
 - **JS**    
-The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ but this was necessary for jQuery Materialize initialisation so can be dismissed. No other syntax errors were identified.        
+The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ and M but this was necessary for jQuery Materialize initialisation so can be dismissed. No other syntax errors were identified.        
 
 - **PYTHON**    
-The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. No error were found.    
+The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. No errors were found.    
 ![Python Validator](/documentation/python_validation.jpg)    
 
 ### Manual Testing user stories
