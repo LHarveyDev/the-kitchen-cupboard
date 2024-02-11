@@ -149,7 +149,7 @@ def add_recipe():
 
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("add_recipe"))
+        return redirect(url_for("profile"))
 
     recipes = mongo.db.recipes.find().sort("name", 1)
     return render_template("add_recipe.html", recipes=recipes)
@@ -199,16 +199,16 @@ def delete_recipe(recipe_id):
 
     # Check if the recipe exists
     if recipe:
-        # Check if the currently logged-in user matches the creator of the recipe
+        # Check if the logged-in user matches the creator of the recipe
         if session.get('user') == recipe.get('created_by'):
             # Delete the recipe if the user is the creator
             mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
             flash("Recipe Successfully Deleted")
         else:
-            # If the user is not the creator, display a message indicating unauthorized access
+            # If the user is not the creator, display a flash message
             flash("You are not authorized to delete this recipe")
     else:
-        # If the recipe doesn't exist, display a message indicating it couldn't be found
+        # If the recipe doesn't exist, display a flash message
         flash("Recipe not found")
 
     # Redirect to the profile page regardless of the outcome
