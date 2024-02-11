@@ -25,7 +25,7 @@ body {
     background-image: url('/static/images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #a5dade; /* For use if the background image does not load
+    background-color: #a5dade;
 }
 
 /* Headers and text*/
