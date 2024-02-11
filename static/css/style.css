@@ -25,7 +25,7 @@ body {
     background-image: url('/static/images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #a5dade;
+    background-color: #a5dade; /* For use if the background image does not load
 }
 
 /* Headers and text*/
@@ -46,6 +46,16 @@ h2 {
     font-family: "Pacifico", cursive;
     color: gray;
     text-align: center;
+}
+
+h3 {
+    color: slategray;
+    width: 55%;
+    background-color: #FFC9B9;
+    border-radius: 10px; 
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-bottom: 6px;
 }
 
 h4, h5 {
@@ -112,16 +122,6 @@ h4, h5 {
     padding: 2px;
     margin: 0 auto;
     margin-top: 10px;
-}
-
-.text-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: auto;
-    color: slategray;
 }
 
 /* Buttons*/
