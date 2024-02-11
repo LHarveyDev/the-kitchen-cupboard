@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 {% block content %}
 
-<!-- Search form and intructions on search terms to use-->
+<!-- Search form and instructions on search terms to use-->
 
 {% if not results %}
 <div class="text-search">
@@ -42,7 +42,6 @@
     <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-content">
-                <!-- Modal for individual recipes -->
                 <a href="#modal-{{ result._id }}" class="modal-trigger">
                     <span class="card-image">
                         <img src="{{ result.image }}">
@@ -57,6 +56,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal for individual recipes -->
     <div id="modal-{{ result._id }}" class="modal">
         <div class="modal-content">
             <h4>{{ result.name }}</h4>
@@ -86,14 +87,14 @@
 
 <!-- Redirect to register page if no results found -->
 {% if not results %}
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                New Here?
-                <a href="{{ url_for('register') }}" class="text-darken-4">Register Account</a>
-            </p>
-        </div>
+<div class="row">
+    <div class="col s12">
+        <p class="center-align">
+            New Here?
+            <a href="{{ url_for('register') }}" class="text-darken-4">Register Account</a>
+        </p>
     </div>
+</div>
 {% endif %}
 
 {% endblock %}
