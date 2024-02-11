@@ -320,8 +320,8 @@ Actual Enviroment variables not disclosed for security
 
 ### Code
 
-- Code Institute's Task Manager project walkthrough. Used to create the user authentication function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
-- Code Institute's Task Manager project walkthrough. Used to create the search function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
+- Code Institute's Task Manager project walkthrough. Used to create the user authentication function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
+- Code Institute's Task Manager project walkthrough. Used to create the search function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
 - W3Schools tutorial on how flex-wrap works. I used this to make my edit and delete buttons responsive on laptop sized screens. [W3schools](https://www.w3schools.com/cssref/css3_pr_flex-wrap.php)
 - I used this document as a refresher on how absolute and relative filepaths work [Stack Overflow](https://stackoverflow.com/questions/10659459/starting-with-a-forward-slash-in-html-for-href)
@@ -330,7 +330,7 @@ Actual Enviroment variables not disclosed for security
 
 - All content for the individual recipes (images and text) was obtained from [BBC Good Food](https://www.bbcgoodfood.com/)
 - Flat green checkered background image from <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
-- Placeholder image acquired from [Freepik]("https://www.freepik.com/free-vector/hand-drawn-cutlery-set_16263394.htm#query=plate%20cutlery&position=2&from_view=search&track=ais&uuid=14df9a14-5a9b-431b-80f6-777890683ee5")Image by rawpixel.com
+- Placeholder image acquired from [Freepik](https://www.freepik.com/free-vector/hand-drawn-cutlery-set_16263394.htm#query=plate%20cutlery&position=2&from_view=search&track=ais&uuid=14df9a14-5a9b-431b-80f6-777890683ee5) Image by rawpixel.com
 
 ### Acknowledgements
 
