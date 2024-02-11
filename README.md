@@ -1,62 +1,9 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for the mongo lessons. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **April 3rd, 2023**
-
-## Codeanywhere Reminders
-
-# IDE
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose option 4.4 for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password *(will not echo **\*\*\*\*** *on screen)\*
-
-#### Clear screen in Mongo Shell:
-
-- `cls`
-
-#### Show all database collections:
-
-- `show collections`
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 
 # The Kitchen Cupboard
-The Kitchen Cupboard is a searchable database of recipes. Registered users can add comments and recipe ideas and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.   
+The Kitchen Cupboard is a searchable database of recipes. Registered users can add their own recipes and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.    
+The website utilises HTML and CSS for the Front end and Python for the Back end. I have used the Flask micro-framework alongside Python for the Back end functionality and Materialize to help with the Front end styling.    
+The recipe data is stored in a non-relational database, I have used MongoDB. Visitors to the site are able to search the database and registered users are also able to add/edit/delete their own content.  
 The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.com/)
 
 ## Table Of Contents:
@@ -69,10 +16,10 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
     * [Database Diagram](#database-diagram)
     
 2. [Features](#features)
-    * [Navigation](#Navigation-bar)
+    * [Navigation](#navigation-bar)
     * [Home page](#home-page)
     * [Search page](#search-page)
-    * [Recipe Details page](#recipe-details-page)
+    * [Recipe Details modal](#recipe-details-modal)
     * [Register page](#register-page)
     * [Sign In page](#sign_in-page)
     * [Profile page](#profile-page)
@@ -252,7 +199,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
   - ### Edit Recipe Page    
   ![Edit recipe page](/documentation/uxeditrecipe_mobile.jpg)    
-  The edit recipe page is only available to signed in users. The edit and delete buttons are only visible on your own recipes preventing access to other users material. This is where they can update the contents of the recipe including uploading a new image url if desired. The updated information is sent to the database and overwrites the original data except for where there is no change.    
+  The edit recipe page is only available to signed in users. The edit and delete buttons are only visible on your own recipes preventing access to other users material. This is where the current user can update the contents of their recipe including uploading a new image url if desired. The updated information is sent to the database and overwrites the original data except for where there is no change.    
 
 
   - ### CRUD    
@@ -270,7 +217,7 @@ Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
 I have tested compatibility on the following browsers. Safari, Chrome, Edge and Firefox.
 ### Responsiveness
-- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Android (Galaxy A20e and Galaxy A), iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
+- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Samsung Galaxy, iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
 - **HTML**    
