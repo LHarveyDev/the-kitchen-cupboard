@@ -21,7 +21,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
     * [Search page](#search-page)
     * [Recipe Details modal](#recipe-details-modal)
     * [Register page](#register-page)
-    * [Sign In page](#sign_in-page)
+    * [Sign In page](#sign-in-page)
     * [Profile page](#profile-page)
     * [Add Recipe page](#add-recipe-page)
     * [Edit Recipe page](#edit-recipe-page)
@@ -95,9 +95,9 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 ### Frameworks, Libraries & Programs Used
 
 1. [Lucidchart:](https://lucidchart.com/)
-   - Lucidchart was used to create the [flowcharts](#wireframes-&-flowcharts) during the design process
+   - Lucidchart was used to create the [flowcharts](#wireframes) during the design process
 1. [Balsamiq:](https://balsamiq.com/)
-   - Balsamiq was used to create the [wireframes](#wireframes-&-flowcharts) during the design process
+   - Balsamiq was used to create the [wireframes](#wireframes) during the design process
 1. [dbdiagram:](https://dbdiagram.io)
    - dbdiagram was used to create the [database schema](/documentation/database_schema.png) during the design process
 1. [Flask:](https://palletsprojects.com/p/flask/)
@@ -107,7 +107,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 1. [Materialize 1.0.0:](https://materializecss.com/)
    - Materialize was used to assist with the responsiveness and styling of the website.
 1. [JQuery:](https://releases.jquery.com/)
-   - jQuery was used in conjunction with Materialize.
+   - jQuery was used in conjunction with Materialize to add interactivity.
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
@@ -146,7 +146,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   ![Search page](/documentation/uxsearch_mobile.jpg)  
   The search page is probably the first place that new visitors will navigate to. There is no need to be registered so I anticipate they will explore whether the site is for them by using the search feature first.    
   Users can search by keyword. I chose this option as I feel it is quick and simple. I did consider having dropdown menus to select Difficulty Level and Cuisine but I abandoned this as it over-complicated things and made the interface cluttered especially on mobiles. I think it would be more useful to add this as an option to filter the results once a keyword search has been performed.    
-  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it even though it may not be specifically mentioned in the title. There is a minimum length required of 3 characters. If the user tries to perform a search without entering a search term a pop-up informs them that it is a required field. 
+  The keyword search interrogates two fields in my database, the name and ingredients. This picks up any recipe that uses the keyword as an ingredient within it, even though it may not be specifically mentioned in the title. There is a minimum length required of 3 characters. If the user tries to perform a search without entering a search term a pop-up informs them that it is a required field. 
   The search results are returned and displayed using Materialize's card component. The class rule dictates that the results are displayed 4 side-by-side on desktops, 2 side-by-side on tablets and stacked singly on mobiles.  
     
   ![Mobile view](/documentation/uxresults_mobile.jpg)
@@ -157,12 +157,12 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
   The results cards display the recipe image, name and difficulty level not the full details. This should be enough for the user to decide whether they would like to read further and the image and title are a link that will then open the individual recipe up in a modal.    
   Originally the recipes opened up full-screen in a separate page and then the user had to navigate back to the results by clicking a 'Back to results' link. I changed this to the full recipe details opening in a Materialize pop-up modal. This modal window can be dismissed by clicking the 'close' button in the footer or clicking outside of the modal on the results screen behind. I feel this gives a better user experience and helps to eliminate the user navigating backwards using the browser back button.        
-  The full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
+  Once open, the full recipe details are then displayed - Image, name, difficulty level, ingredients, method and created by. As users are also allowed to upload their own recipes some of the fields may have been ommitted and these will not then be displayed, if there has been no image uploaded a placeholder image will be displayed instead to preserve the uniformity of the display style.
 
 
   - ### Recipe Details Modal   
   ![Desktop view](/documentation/uxdetail_desktop.jpg)    
-  The individual recipe modal window details the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings. If the contents is larger than the window a scroll bar appears on the right-hand side. The modal has been designed with a mobile first approach in mind.         
+  The individual recipe modal window details the ingredients and method in full. The styling is aligned with the rest of the site and utilises soft pastel colours and the Pacifico font for its headings. If the content is larger than the window a scroll bar appears on the right-hand side. The modal has been designed with a mobile first approach in mind.         
   If the user has not supplied an image url when they added their recipe then the placeholder image will be displayed.    
   Once the user has finished with the individual recipe they can use the 'close' button in the footer of the modal to return to their search results or alternatively just click outside of the modal.     
 
@@ -191,8 +191,8 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   ![Add recipe page](/documentation/uxaddrecipe_mobile.jpg)    
   This page allows the registered user to add their own recipes which will then be searchable by other users. The form follows the format of the other forms on the site for uniformity and brand identity. A text box explains the purpose of the form and then there are input fields for image, name, ingredients and method followed by a submit button.    
   The recipe image field allows for a user to input an image url. There is a pop-up help box directing users to a free image hosting site called ImgBB which they can use without registering first. The uploading of an image url is optional and if no image is provided a placeholder image will be displayed in its place. In future versions of the site I would like to enable image uploads but this is beyond the scope of this project.   
-  The recipe name field is unrestricted in length but the text within it is displayed responsively to avoid overflow.
-  The ingredients input field contains placeholder text asking the user to list each ingredient on a separate line. This is because I have written code that will add a semi-colon to the end of each inputted line and this will then split each line when displayed to create a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
+  The recipe name field is restricted in length to 50 characters which should be ample, this accomodates up to three lines of text.
+  The ingredients input field contains placeholder text asking the user to list each ingredient on a separate line. This is because I have written code that will split each line and store it in an array. When the recipe is called back up from the database the individual items in the array are then displayed as a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
   The method input field contains placeholder text asking the user to list each step on a separate line. This is because I have written code that will split each line and store it in an array. When the recipe is called back up from the database the individual items in the array are then displayed as a list. The Materialize text-area class has been applied, this enables the size of the input box to expand to the amount of content within it.    
   The submit button posts the information to my Mongodb database.    
 
@@ -213,22 +213,25 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 ## Testing
 
 ### Google's Lighthouse Performance
-Screenshots of certain pages and scores (mobile and desktop)
+I have tested my site using Google's Developer Tools Lighthouse. Here is how it performed on mobile        
+![Google Lighthouse](/documentation/lighthouse_mobile.jpg)    
+and here is how it performed on desktop    
+![Google Lighthouse](/documentation/lighthouse_desktop.jpg) 
 ### Browser Compatibility
 I have tested compatibility on the following browsers. Safari, Chrome, Edge and Firefox.
 ### Responsiveness
-- Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Samsung Galaxy, iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
+Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Samsung Galaxy, iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.
 ![Am I Responsive](/documentation/amiresponsive.jpg)
 ### Code Validation
 - **HTML**    
-The W3 [HTML5](https://validator.w3.org/) validation tool was used. I validated by URI, no errors were found.
+The [W3 HTML5](https://validator.w3.org/) validation tool was used. I validated by URI, no errors were found.
 ![HTML Validator](/documentation/html_validation.jpg)
 - **CSS**    
-The W3 [CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI. The errors encountered were all related to the Materialize framework that I used and not my custom CSS. 
+The [W3 CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI. The errors encountered were all related to the Materialize framework that I used and not my custom CSS. 
 ![CSS Validator](/documentation/css_validation.jpg)
 - **JS**    
-The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ and M but this was necessary for jQuery Materialize initialisation so can be dismissed. No other syntax errors were identified.        
-
+The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ but this was necessary for jQuery Materialize initialisation so can be dismissed. No other syntax errors were identified.        
+![JS Validator](/documentation/js_validation.jpg)
 - **PYTHON**    
 The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. No errors were found.    
 ![Python Validator](/documentation/python_validation.jpg)    
@@ -249,14 +252,14 @@ Test all your features, you can use the same approach
 List of bugs and how did you fix them, you can create simple table
 | Bug | Fix
 |:-------:|:--------|
-| User images not displaying on recipe details page  |  Added code to function to ensure_forward_slash was added to filepath  |
+| Back to results link  |  Added code to function to ensure_forward_slash was added to filepath  |
 ## Deployment
 This website is deployed to Heroku from a GitHub repository, the following steps were taken:
 
 #### Creating a Repository on GitHub
 - First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/ci-mongo-template).
 - Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository**.
-- Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Codeanywhere](https://app.codeanywhere.com/)and clicked on **New Workspace** to create a workspace in codeanywhere so that I could write the code for the site.
+- Once the repository was created, I clicked the green **code** button and copied the HTTPS address. I then navigated to [Codeanywhere](https://app.codeanywhere.com/) and clicked on **New Workspace** to create a workspace in codeanywhere so that I could write the code for the site.
   
 #### Making a Local Clone
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/LHarveyDev/the-kitchen-cupboard)
@@ -320,16 +323,17 @@ Actual Enviroment variables not disclosed for security
 - Code Institute's Task Manager project walkthrough. Used to create the user authentication function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main/02-UserAuthenticationAndAuthorization/04-login_functionality)
 - Code Institute's Task Manager project walkthrough. Used to create the search function[Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
-- W3Schools tutorial on how flex-wrap works. I used this to make my edit and delete buttons responsive on laptop sized screens. [w3schools](https://www.w3schools.com/cssref/css3_pr_flex-wrap.php)
+- W3Schools tutorial on how flex-wrap works. I used this to make my edit and delete buttons responsive on laptop sized screens. [W3schools](https://www.w3schools.com/cssref/css3_pr_flex-wrap.php)
 - I used this document as a refresher on how absolute and relative filepaths work [Stack Overflow](https://stackoverflow.com/questions/10659459/starting-with-a-forward-slash-in-html-for-href)
 
 ### Content
 
 - All content for the individual recipes (images and text) was obtained from [BBC Good Food](https://www.bbcgoodfood.com/)
+- Flat green checkered background image from <a href="https://www.freepik.com/free-vector/flat-green-checkered-background_49189150.htm#query=gingham%20background&position=3&from_view=search&track=ais&uuid=c2a4f938-aa1b-48bb-8fd4-0dfadcc1a4e7">Freepik</a>
 - Placeholder image acquired from [Freepik]("https://www.freepik.com/free-vector/hand-drawn-cutlery-set_16263394.htm#query=plate%20cutlery&position=2&from_view=search&track=ais&uuid=14df9a14-5a9b-431b-80f6-777890683ee5")Image by rawpixel.com
 
 ### Acknowledgements
 
-- My Mentor for continuous helpful feedback.
+- My Mentor Can Sucullu for continuous helpful feedback.
 - Tutor support at Code Institute for their support.
 
