@@ -162,7 +162,7 @@ def edit_recipe(recipe_id):
     if not recipe:
         flash("Recipe not found")
         return redirect(url_for("profile"))
-
+    # Check if the logged-in user matches the creator of the recipe
     if recipe["created_by"] != session["user"]:
         flash("You are not allowed to edit this recipe")
         return redirect(url_for("profile"))

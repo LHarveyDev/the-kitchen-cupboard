@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix"></i>
-                    <input id="recipe_name" name="recipe_name" type="text" maxlength="50" value="{{ recipe.name }}" validate>
+                    <input id="recipe_name" name="recipe_name" type="text" maxlength="50" value="{{ recipe.name }}" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-carrot prefix"></i>
                     <textarea id="recipe_ingredients" name="recipe_ingredients"
-                        class="textarea">{{ recipe.ingredients }}</textarea>
+                        class="textarea" required>{{ recipe.ingredients }}</textarea>
                     <label class="active" for="recipe_ingredients">Ingredients (Please list)</label>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list-ol prefix"></i>
-                    <textarea id="recipe_method" name="recipe_method" class="textarea">{{ recipe.method }}</textarea>
+                    <textarea id="recipe_method" name="recipe_method" class="textarea" required>{{ recipe.method }}</textarea>
                     <label class="active" for="recipe_method">Method (Please list)</label>
                 </div>
             </div>

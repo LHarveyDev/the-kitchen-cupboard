@@ -207,7 +207,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
   * CREATE by adding their own recipes
   * READ by searching for recipes within the database
   * UPDATE by editing their own recipes
-  * DELETE their own recipes
+  * DELETE their own recipes    
 
 
 ## Testing
@@ -216,7 +216,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 I have tested my site using Google's Developer Tools Lighthouse. Here is how it performed on mobile        
 ![Google Lighthouse](/documentation/lighthouse_mobile.jpg)    
 and here is how it performed on desktop    
-![Google Lighthouse](/documentation/lighthouse_desktop.jpg) 
+![Google Lighthouse](/documentation/lighthouse_desktop.jpg)
 ### Browser Compatibility
 I have tested compatibility on the following browsers. Safari, Chrome, Edge and Firefox.
 ### Responsiveness
