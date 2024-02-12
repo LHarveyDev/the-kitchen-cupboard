@@ -241,6 +241,8 @@ Test all your user stories, you can create table
 User Story |  Test | Pass
 --- | --- | :---:
 Unregistered user tries to log in | Flash message 'Not Yet Registered' and redirect to Register page | &check;
+Registered user enters the incorrect password | Flash message 'Incorrect Password and/or Username | &check;
+User tries to create a username or password without the minimum no of characters | Helper text explains you need to use more characters | &check;    
 - ![Not Registered](/documentation/not_yet_registered.jpg)
 ### Manual Testing features
 Test all your features, you can use the same approach 
