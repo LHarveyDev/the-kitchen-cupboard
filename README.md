@@ -236,20 +236,30 @@ The [jshint](https://www.jshint.com/) validation tool was used. There were error
 The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. No errors were found.    
 ![Python Validator](/documentation/python_validation.jpg)    
 
-### Manual Testing user stories
-Test all your user stories, you can create table 
+### Manual Testing user stories    
+ 
 User Story |  Test | Pass
 --- | --- | :---:
 Unregistered user tries to log in | Flash message 'Not Yet Registered' and redirect to Register page | &check;
-Registered user enters the incorrect password | Flash message 'Incorrect Password and/or Username | &check;
-User tries to create a username or password without the minimum no of characters | Helper text explains you need to use more characters | &check;    
-- ![Not Registered](/documentation/not_yet_registered.jpg)
-### Manual Testing features
-Test all your features, you can use the same approach 
+Registered user enters the incorrect password | Flash message 'Incorrect Password and/or Username' | &check;
+User tries to create a username or password without the minimum no of characters | Helper text explains you need to use more characters | &check;
+User tries to perform a search without entering a keyword | Helper text appears 'Please fill in this field' |  &check;
+User performs a search with no results | Flash message 'No results found, Please try another search | &check;
+User tries to add a recipe without populating the recipe name, ingredients or method fields | Helper text appears 'Please fill in this field' | &check;
+User adds a recipe without a recipe image url | Placeholder image is displayed instead | &check;
+User tries to edit/delete a recipe not created by them | Flash message 'You are not allowed to edit/delete this recipe' | &check;    
+
+### Manual Testing features    
+
 | Status | feature
 |:-------:|:--------|
-| &check; | description
-- attach screenshot
+| &check; | User can perform a search of the database
+| &check; | User can register successfully and is directed to their profile page
+| &check; | User can add a recipe
+| &check; | User can edit their own recipe
+| &check; | User can delete their own recipe
+| &check; | User can log out     
+
 ## Bugs
 List of bugs and how did you fix them, you can create simple table
 | Bug | Fix
