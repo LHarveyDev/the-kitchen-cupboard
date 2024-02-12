@@ -248,7 +248,6 @@ User performs a search with no results | Flash message 'No results found, Please
 User tries to add a recipe without populating the recipe name, ingredients or method fields | Helper text appears 'Please fill in this field' | &check;
 User adds a recipe without a recipe image url | Placeholder image is displayed instead | &check;
 User tries to edit/delete a recipe not created by them | Flash message 'You are not allowed to edit/delete this recipe' | &check;    
-
 ### Manual Testing features    
 | Status | feature
 |:-------:|:--------|
@@ -258,13 +257,13 @@ User tries to edit/delete a recipe not created by them | Flash message 'You are 
 | &check; | User can edit their own recipe
 | &check; | User can delete their own recipe
 | &check; | User can log out     
-
 ## Bugs    
 | Bug | Fix
 |:-------:|:--------|
 | User image upload proved unreliable | I changed this to only allow users to add an image URL. Being able to upload a range of file formats, resize the image and store it in the database is something I would like to add in the future |
 | Background image on search results page distorting | I chose a new image with a repeating pattern that looks good however many results are displayed. I could have added pagination but I liked the way a user can just scroll down through the results on mobile. As the database expands I would probably need to add a filter function or pagination to manage the number of results |
 | Edit/Delete buttons obscuring the social media buttons on mobile | I used CSS to fix the buttons to the bottom of the card and flex-wrap to wrap them |
+| Search function had two methods GET & POST. This caused an issue with storing the search query and returning back to results | I converted the function to GET only and I also added a pop-up modal to display individual recipe details rather than take users to another page |    
 ## Deployment
 This website is deployed to Heroku from a GitHub repository, the following steps were taken:
 
