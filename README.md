@@ -177,7 +177,7 @@ The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.c
 
   - ### Sign In Page    
   ![Sign in page](/documentation/uxsignin_mobile.jpg)  
-  The sign in page repeats the layout and features of the 'Register' page, this keeps the site looking uniform. If an incorrect username or password is entered a flash message is displayed 'Incorrect Username and/or Password'. This message deliberately does not specify whether is was the username or password that was incorrect to reduce the chance of a malicious user attempting to guess. Extra layers of security and complexity could be added dependent on how the site evolves and the user data it contains. I have used Werkzeug for password hashing to protect registered users data.    
+  The sign in page repeats the layout and features of the 'Register' page, this keeps the site looking uniform. If an incorrect username is entered a flash message is displayed 'Not yet registered' and the user is redirected to the 'Register' page. If an incorrect password is used a flash message 'Incorrect password and/or username' is displayed. This message does not specify if it was the username or password that was incorrect to avoid malicious attempts to guess the password based a correct username. Extra layers of security and complexity could be added dependent on how the site evolves and the user data it contains. I have used Werkzeug for password hashing to protect registered users data.    
   The text under the form provides a link to 'Register' for new users who might have found themselves in the wrong place.    
   The form looks just as good on mobile devices with all information visible without having to scroll down.
 
@@ -240,8 +240,8 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. 
 Test all your user stories, you can create table 
 User Story |  Test | Pass
 --- | --- | :---:
-paste here your user story | what is visible to the user and what action they should perform | &check;
-- attach screenshot
+Unregistered user tries to log in | Flash message 'Not Yet Registered' and redirect to Register page | &check;
+- ![Not Registered](/documentation/not_yet_registered.jpg)
 ### Manual Testing features
 Test all your features, you can use the same approach 
 | Status | feature
