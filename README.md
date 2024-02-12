@@ -325,7 +325,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 |  PORT |    |
 |  SECRET_KEY   |     |
 
-Actual Enviroment variables not disclosed for security
+Actual Enviroment variables not disclosed for security. They can be found in my env.py file which has been added to my .gitignore file within my project and therefore is not commited to github.
 
 ## Credits
 
@@ -335,11 +335,14 @@ Actual Enviroment variables not disclosed for security
 - Code Institute's Task Manager project walkthrough. Used to create the search function [Code Institute](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py#L28)
 - How to center a div using Flex [Stack Overflow](https://stackoverflow.com/questions/9862167/positioning-div-element-at-center-of-screen)
 - Python string splitlines method. I used this to display my ingredients and method items as lists [W3schools](https://www.w3schools.com/python/ref_string_splitlines.asp)
+- I also referred to this document on how to split a string into a list in Jinja [Stack Overflow](https://stackoverflow.com/questions/30515456/split-string-into-list-in-jinja)
 - W3Schools tutorial on how flex-wrap works. I used this to make my edit and delete buttons responsive on laptop sized screens. [W3schools](https://www.w3schools.com/cssref/css3_pr_flex-wrap.php)
 - I used this document as a refresher on how absolute and relative filepaths work [Stack Overflow](https://stackoverflow.com/questions/10659459/starting-with-a-forward-slash-in-html-for-href)
 - The Flask documentation was referred to extensively [Flask documentation](https://flask.palletsprojects.com/en/3.0.x/)
 - The Materialize documentation was used to create the various components including [Materialize Cards](https://materializecss.com/cards.html) and [Materialize Buttons](https://materializecss.com/buttons.html)
-
+- I also used Slack to view other students work in the project-milestone-3 and peer-code-review channels
+- My mentor helped identify the issue I had with my search queries not being stored and shared the following guide [Stack Abuse](https://stackabuse.com/get-request-query-parameters-with-flask/)    
+  
 ### Content
 
 - All content for the individual recipes (images and text) was obtained from [BBC Good Food](https://www.bbcgoodfood.com/)
