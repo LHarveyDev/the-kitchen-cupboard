@@ -237,20 +237,19 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. 
 ![Python Validator](/documentation/python_validation.jpg)    
 
 ### Manual Testing user stories    
- 
+I asked family, friends and work colleagues to test my site on their devices and report back any issues. This group encompassed a wide range of ages and abilities. I felt this gave me a fair representation of how my app would be used in a real world situation and the feedback was very useful.      
 User Story |  Test | Pass
 --- | --- | :---:
 Unregistered user tries to log in | Flash message 'Not Yet Registered' and redirect to Register page | &check;
 Registered user enters the incorrect password | Flash message 'Incorrect Password and/or Username' | &check;
-User tries to create a username or password without the minimum no of characters | Helper text explains you need to use more characters | &check;
+User tries to create a username or password without the minimum number of characters | Helper text explains you need to use more characters | &check;
 User tries to perform a search without entering a keyword | Helper text appears 'Please fill in this field' |  &check;
-User performs a search with no results | Flash message 'No results found, Please try another search | &check;
+User performs a search with no results | Flash message 'No results found, Please try another search' | &check;
 User tries to add a recipe without populating the recipe name, ingredients or method fields | Helper text appears 'Please fill in this field' | &check;
 User adds a recipe without a recipe image url | Placeholder image is displayed instead | &check;
 User tries to edit/delete a recipe not created by them | Flash message 'You are not allowed to edit/delete this recipe' | &check;    
 
 ### Manual Testing features    
-
 | Status | feature
 |:-------:|:--------|
 | &check; | User can perform a search of the database
@@ -260,11 +259,12 @@ User tries to edit/delete a recipe not created by them | Flash message 'You are 
 | &check; | User can delete their own recipe
 | &check; | User can log out     
 
-## Bugs
-List of bugs and how did you fix them, you can create simple table
+## Bugs    
 | Bug | Fix
 |:-------:|:--------|
-| Back to results link  |  Added code to function to ensure_forward_slash was added to filepath  |
+| User image upload proved unreliable | I changed this to only allow users to add an image URL. Being able to upload a range of file formats, resize the image and store it in the database is something I would like to add in the future |
+| Background image on search results page distorting | I chose a new image with a repeating pattern that looks good however many results are displayed. I could have added pagination but I liked the way a user can just scroll down through the results on mobile. As the database expands I would probably need to add a filter function or pagination to manage the number of results |
+| Edit/Delete buttons obscuring the social media buttons on mobile | I used CSS to fix the buttons to the bottom of the card and flex-wrap to wrap them |
 ## Deployment
 This website is deployed to Heroku from a GitHub repository, the following steps were taken:
 
