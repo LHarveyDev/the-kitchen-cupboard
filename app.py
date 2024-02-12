@@ -96,13 +96,12 @@ def signin():
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("signin"))
-
+                flash("Incorrect Password")
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("signin"))
+            flash("Not Yet Registered")
+
+        return redirect(url_for("register"))
 
     return render_template("signin.html")
 
@@ -164,6 +163,10 @@ def edit_recipe(recipe_id):
         flash("Recipe not found")
         return redirect(url_for("profile"))
 
+    if recipe["created_by"] != session["user"]:
+        flash("You are not allowed to edit this recipe")
+        return redirect(url_for("profile"))
+
     if request.method == "POST":
         # Check if a new image URL is provided
         new_image = request.form.get("recipe_image")
@@ -206,7 +209,7 @@ def delete_recipe(recipe_id):
             flash("Recipe Successfully Deleted")
         else:
             # If the user is not the creator, display a flash message
-            flash("You are not authorized to delete this recipe")
+            flash("You are not allowed to delete this recipe")
     else:
         # If the recipe doesn't exist, display a flash message
         flash("Recipe not found")
