@@ -96,7 +96,7 @@ def signin():
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
-                flash("Incorrect Password")
+                flash("Incorrect Password and/or Username")
         else:
             # username doesn't exist
             flash("Not Yet Registered")
