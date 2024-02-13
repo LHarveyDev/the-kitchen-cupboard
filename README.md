@@ -3,7 +3,9 @@
 # The Kitchen Cupboard
 The Kitchen Cupboard is a searchable database of recipes. Registered users can add their own recipes and become part of the Kitchen Cupboard community. This is my submission for the Code Institute Level 5 Diploma in Web Application Development Milestone Project 3.    
 The website utilises HTML and CSS for the Front end and Python for the Back end. I have used the Flask micro-framework alongside Python for the Back end functionality and Materialize to help with the Front end styling.    
-The recipe data is stored in a non-relational database, I have used MongoDB. Visitors to the site are able to search the database and registered users are also able to add/edit/delete their own content.  
+The recipe data is stored in a non-relational database, I have used MongoDB. Visitors to the site are able to search the database and registered users are also able to add/edit/delete their own content.    
+The Kitchen Cupboard could be expanded quite easily. In the future I would like to add the ability for registered users to be able to comment on recipes and add them to a 'favourites' location on their profile page. I will also add a filter function so after obtaining the search results they can be filtered by difficulty level, cost per portion or allergy requirements.    
+I see the Kitchen Cupboard becoming a community where users can share and encourage each other and develop a love for good food and cooking.      
 The website is live [Here](https://the-kitchen-cupboard-19573f40a32b.herokuapp.com/)
 
 ## Table Of Contents:
