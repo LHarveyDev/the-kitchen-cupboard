@@ -245,7 +245,7 @@ Registered user enters the incorrect password | Flash message 'Incorrect Passwor
 User tries to create a username or password without the minimum number of characters | Helper text explains you need to use more characters | &check;
 User tries to perform a search without entering a keyword | Helper text appears 'Please fill in this field' |  &check;
 User performs a search with no results | Flash message 'No results found, Please try another search' | &check;
-User tries to add a recipe without populating the recipe name, ingredients or method fields | Helper text appears 'Please fill in this field' | &check;
+User tries to add/edit a recipe without populating the recipe name, ingredients or method fields | Helper text appears 'Please fill in this field' | &check;
 User adds a recipe without a recipe image url | Placeholder image is displayed instead | &check;
 User tries to edit/delete a recipe not created by them | Flash message 'You are not allowed to edit/delete this recipe' | &check;    
 ### Manual Testing features    
